@@ -1,244 +1,480 @@
 MMM Variant: ijk, Size: 50
-Total Cycles: 1204813
-Total Instructions: 2788137
-Total Load/Store Instructions: 500098
-Total Floating Point Instructions: 1004722
-L1 Data Cache Accesses: 534117
-L1 Data Cache Misses: 30824
-L2 Data Cache Accesses: 30797
-L2 Data Cache Misses: 270
+Total Cycles: 1205005
+Total Instructions: 2788143
+Total Load/Store Instructions: 502656
+Total Floating Point Instructions: 1005043
+L1 Data Cache Accesses: 533981
+L1 Data Cache Misses: 30846
+L2 Data Cache Accesses: 30846
+L2 Data Cache Misses: 387
 --------------------------------------------------
 MMM Variant: jik, Size: 50
-Total Cycles: 1167035
-Total Instructions: 2780837
-Total Load/Store Instructions: 500098
-Total Floating Point Instructions: 1000698
-L1 Data Cache Accesses: 505005
-L1 Data Cache Misses: 28513
-L2 Data Cache Accesses: 28510
-L2 Data Cache Misses: 800
+Total Cycles: 1255814
+Total Instructions: 2780844
+Total Load/Store Instructions: 502658
+Total Floating Point Instructions: 1007317
+L1 Data Cache Accesses: 505132
+L1 Data Cache Misses: 28930
+L2 Data Cache Accesses: 28930
+L2 Data Cache Misses: 739
 --------------------------------------------------
 MMM Variant: jki, Size: 50
-Total Cycles: 1318501
-Total Instructions: 3160581
-Total Load/Store Instructions: 505098
-Total Floating Point Instructions: 875193
-L1 Data Cache Accesses: 660823
-L1 Data Cache Misses: 30166
-L2 Data Cache Accesses: 29911
-L2 Data Cache Misses: 916
+Total Cycles: 1315526
+Total Instructions: 3160587
+Total Load/Store Instructions: 630156
+Total Floating Point Instructions: 875144
+L1 Data Cache Accesses: 661371
+L1 Data Cache Misses: 30200
+L2 Data Cache Accesses: 30200
+L2 Data Cache Misses: 1150
 --------------------------------------------------
 MMM Variant: kji, Size: 50
-Total Cycles: 1274047
-Total Instructions: 3160584
-Total Load/Store Instructions: 505098
-Total Floating Point Instructions: 875162
-L1 Data Cache Accesses: 660839
-L1 Data Cache Misses: 27976
+Total Cycles: 1272911
+Total Instructions: 3160590
+Total Load/Store Instructions: 630156
+Total Floating Point Instructions: 875124
+L1 Data Cache Accesses: 660536
+L1 Data Cache Misses: 27956
 L2 Data Cache Accesses: 27956
-L2 Data Cache Misses: 451
+L2 Data Cache Misses: 499
 --------------------------------------------------
 MMM Variant: ikj, Size: 50
-Total Cycles: 1267821
-Total Instructions: 3023238
-Total Load/Store Instructions: 505098
-Total Floating Point Instructions: 875206
-L1 Data Cache Accesses: 631657
-L1 Data Cache Misses: 30536
-L2 Data Cache Accesses: 30516
-L2 Data Cache Misses: 193
+Total Cycles: 1273680
+Total Instructions: 3023246
+Total Load/Store Instructions: 630160
+Total Floating Point Instructions: 875268
+L1 Data Cache Accesses: 631825
+L1 Data Cache Misses: 30539
+L2 Data Cache Accesses: 30539
+L2 Data Cache Misses: 217
 --------------------------------------------------
 MMM Variant: kij, Size: 50
-Total Cycles: 1275401
-Total Instructions: 3025885
-Total Load/Store Instructions: 505098
-Total Floating Point Instructions: 875329
-L1 Data Cache Accesses: 632119
-L1 Data Cache Misses: 32615
-L2 Data Cache Accesses: 32521
-L2 Data Cache Misses: 271
+Total Cycles: 1280436
+Total Instructions: 3025891
+Total Load/Store Instructions: 630156
+Total Floating Point Instructions: 875425
+L1 Data Cache Accesses: 631892
+L1 Data Cache Misses: 32545
+L2 Data Cache Accesses: 32545
+L2 Data Cache Misses: 224
 --------------------------------------------------
 MMM Variant: ijk, Size: 100
-Total Cycles: 10087345
-Total Instructions: 22150988
-Total Load/Store Instructions: 4000099
-Total Floating Point Instructions: 8072145
-L1 Data Cache Accesses: 4303358
-L1 Data Cache Misses: 257529
-L2 Data Cache Accesses: 257589
-L2 Data Cache Misses: 22334
+Total Cycles: 10099599
+Total Instructions: 22150994
+Total Load/Store Instructions: 4010158
+Total Floating Point Instructions: 8074270
+L1 Data Cache Accesses: 4300931
+L1 Data Cache Misses: 257798
+L2 Data Cache Accesses: 257798
+L2 Data Cache Misses: 24194
 --------------------------------------------------
 MMM Variant: jik, Size: 100
-Total Cycles: 9729848
-Total Instructions: 22121388
-Total Load/Store Instructions: 4000099
-Total Floating Point Instructions: 8024328
-L1 Data Cache Accesses: 4080629
-L1 Data Cache Misses: 253737
-L2 Data Cache Accesses: 253879
-L2 Data Cache Misses: 11708
+Total Cycles: 9661687
+Total Instructions: 22121394
+Total Load/Store Instructions: 4010158
+Total Floating Point Instructions: 8022880
+L1 Data Cache Accesses: 4065502
+L1 Data Cache Misses: 253704
+L2 Data Cache Accesses: 253704
+L2 Data Cache Misses: 5932
 --------------------------------------------------
 MMM Variant: jki, Size: 100
-Total Cycles: 11550517
-Total Instructions: 25140882
-Total Load/Store Instructions: 4020099
-Total Floating Point Instructions: 7006400
-L1 Data Cache Accesses: 5323866
-L1 Data Cache Misses: 295750
-L2 Data Cache Accesses: 357432
-L2 Data Cache Misses: 135643
+Total Cycles: 11252844
+Total Instructions: 25140889
+Total Load/Store Instructions: 5020160
+Total Floating Point Instructions: 7003447
+L1 Data Cache Accesses: 5293991
+L1 Data Cache Misses: 288580
+L2 Data Cache Accesses: 288580
+L2 Data Cache Misses: 14805
 --------------------------------------------------
 MMM Variant: kji, Size: 100
-Total Cycles: 10947017
-Total Instructions: 25140885
-Total Load/Store Instructions: 4020099
-Total Floating Point Instructions: 7008030
-L1 Data Cache Accesses: 5276323
-L1 Data Cache Misses: 295278
-L2 Data Cache Accesses: 294807
-L2 Data Cache Misses: 14133
+Total Cycles: 11164021
+Total Instructions: 25140891
+Total Load/Store Instructions: 5020158
+Total Floating Point Instructions: 7017718
+L1 Data Cache Accesses: 5313191
+L1 Data Cache Misses: 291036
+L2 Data Cache Accesses: 291036
+L2 Data Cache Misses: 53864
 --------------------------------------------------
 MMM Variant: ikj, Size: 100
-Total Cycles: 9962728
-Total Instructions: 24091189
-Total Load/Store Instructions: 4020099
-Total Floating Point Instructions: 7001675
-L1 Data Cache Accesses: 5054053
-L1 Data Cache Misses: 248900
-L2 Data Cache Accesses: 248825
-L2 Data Cache Misses: 1980
+Total Cycles: 9940214
+Total Instructions: 24091195
+Total Load/Store Instructions: 5020158
+Total Floating Point Instructions: 7002626
+L1 Data Cache Accesses: 5050783
+L1 Data Cache Misses: 248686
+L2 Data Cache Accesses: 248686
+L2 Data Cache Misses: 1962
 --------------------------------------------------
 MMM Variant: kij, Size: 100
-Total Cycles: 10619568
-Total Instructions: 24101486
-Total Load/Store Instructions: 4020099
-Total Floating Point Instructions: 7007448
-L1 Data Cache Accesses: 5070670
-L1 Data Cache Misses: 258502
-L2 Data Cache Accesses: 258476
-L2 Data Cache Misses: 6585
+Total Cycles: 10051667
+Total Instructions: 24101492
+Total Load/Store Instructions: 5020158
+Total Floating Point Instructions: 7017549
+L1 Data Cache Accesses: 5074843
+L1 Data Cache Misses: 258556
+L2 Data Cache Accesses: 258556
+L2 Data Cache Misses: 5191
 --------------------------------------------------
 MMM Variant: ijk, Size: 200
-Total Cycles: 111436758
-Total Instructions: 176601700
-Total Load/Store Instructions: 32000111
-Total Floating Point Instructions: 65614751
-L1 Data Cache Accesses: 35994967
-L1 Data Cache Misses: 2294115
-L2 Data Cache Accesses: 3348373
-L2 Data Cache Misses: 2167064
+Total Cycles: 116693311
+Total Instructions: 176601705
+Total Load/Store Instructions: 32040180
+Total Floating Point Instructions: 66155158
+L1 Data Cache Accesses: 35983913
+L1 Data Cache Misses: 2279864
+L2 Data Cache Accesses: 2279864
+L2 Data Cache Misses: 2021596
 --------------------------------------------------
 MMM Variant: jik, Size: 200
-Total Cycles: 92250126
-Total Instructions: 176482498
-Total Load/Store Instructions: 32000109
-Total Floating Point Instructions: 64950934
-L1 Data Cache Accesses: 32841189
-L1 Data Cache Misses: 2616635
-L2 Data Cache Accesses: 2600736
-L2 Data Cache Misses: 118268
+Total Cycles: 90848601
+Total Instructions: 176482505
+Total Load/Store Instructions: 32040180
+Total Floating Point Instructions: 64886507
+L1 Data Cache Accesses: 32853013
+L1 Data Cache Misses: 2625171
+L2 Data Cache Accesses: 2625171
+L2 Data Cache Misses: 118041
 --------------------------------------------------
 MMM Variant: jki, Size: 200
-Total Cycles: 128135281
-Total Instructions: 200561496
-Total Load/Store Instructions: 32080113
-Total Floating Point Instructions: 56572749
-L1 Data Cache Accesses: 50193481
-L1 Data Cache Misses: 9482794
-L2 Data Cache Accesses: 9498137
-L2 Data Cache Misses: 2078445
+Total Cycles: 128220139
+Total Instructions: 200561501
+Total Load/Store Instructions: 40080184
+Total Floating Point Instructions: 56574204
+L1 Data Cache Accesses: 50209473
+L1 Data Cache Misses: 9495579
+L2 Data Cache Accesses: 9495579
+L2 Data Cache Misses: 2080865
 --------------------------------------------------
 MMM Variant: kji, Size: 200
-Total Cycles: 113874659
-Total Instructions: 200561497
-Total Load/Store Instructions: 32080111
-Total Floating Point Instructions: 56527641
-L1 Data Cache Accesses: 50046330
-L1 Data Cache Misses: 9553316
-L2 Data Cache Accesses: 9554434
-L2 Data Cache Misses: 2063428
+Total Cycles: 113896244
+Total Instructions: 200561502
+Total Load/Store Instructions: 40080180
+Total Floating Point Instructions: 56527130
+L1 Data Cache Accesses: 50045525
+L1 Data Cache Misses: 9556296
+L2 Data Cache Accesses: 9556296
+L2 Data Cache Misses: 2080551
 --------------------------------------------------
 MMM Variant: ikj, Size: 200
-Total Cycles: 79674888
-Total Instructions: 192362096
-Total Load/Store Instructions: 32080106
-Total Floating Point Instructions: 56012233
-L1 Data Cache Accesses: 40414391
-L1 Data Cache Misses: 2004825
-L2 Data Cache Accesses: 2004690
-L2 Data Cache Misses: 36862
+Total Cycles: 79443565
+Total Instructions: 192362104
+Total Load/Store Instructions: 40080176
+Total Floating Point Instructions: 56029846
+L1 Data Cache Accesses: 40413682
+L1 Data Cache Misses: 2004661
+L2 Data Cache Accesses: 2004661
+L2 Data Cache Misses: 36827
 --------------------------------------------------
 MMM Variant: kij, Size: 200
-Total Cycles: 84503463
-Total Instructions: 192402693
-Total Load/Store Instructions: 32080106
-Total Floating Point Instructions: 56025561
-L1 Data Cache Accesses: 40587480
-L1 Data Cache Misses: 2035804
-L2 Data Cache Accesses: 2035985
-L2 Data Cache Misses: 82198
+Total Cycles: 85194993
+Total Instructions: 192402700
+Total Load/Store Instructions: 40080174
+Total Floating Point Instructions: 56038943
+L1 Data Cache Accesses: 40605096
+L1 Data Cache Misses: 2034776
+L2 Data Cache Accesses: 2034776
+L2 Data Cache Misses: 113814
 --------------------------------------------------
 MMM Variant: ijk, Size: 400
-Total Cycles: 1108241219
-Total Instructions: 1410403212
-Total Load/Store Instructions: 256000223
-Total Floating Point Instructions: 543179108
-L1 Data Cache Accesses: 336667064
-L1 Data Cache Misses: 72373579
-L2 Data Cache Accesses: 72376102
-L2 Data Cache Misses: 17015986
+Total Cycles: 1105867768
+Total Instructions: 1410403217
+Total Load/Store Instructions: 256160404
+Total Floating Point Instructions: 546636899
+L1 Data Cache Accesses: 336303495
+L1 Data Cache Misses: 72269284
+L2 Data Cache Accesses: 72269284
+L2 Data Cache Misses: 16780095
 --------------------------------------------------
 MMM Variant: jik, Size: 400
-Total Cycles: 968765844
-Total Instructions: 1409924792
-Total Load/Store Instructions: 256000203
-Total Floating Point Instructions: 537031157
-L1 Data Cache Accesses: 325614542
-L1 Data Cache Misses: 83275427
-L2 Data Cache Accesses: 83274302
-L2 Data Cache Misses: 2466194
+Total Cycles: 953122557
+Total Instructions: 1409924799
+Total Load/Store Instructions: 256160368
+Total Floating Point Instructions: 536544713
+L1 Data Cache Accesses: 324476583
+L1 Data Cache Misses: 83401701
+L2 Data Cache Accesses: 83401701
+L2 Data Cache Misses: 781701
 --------------------------------------------------
 MMM Variant: jki, Size: 400
-Total Cycles: 2784274254
+Total Cycles: 2788466843
 Total Instructions: 1602242988
-Total Load/Store Instructions: 256320405
-Total Floating Point Instructions: 530630549
-L1 Data Cache Accesses: 475994013
-L1 Data Cache Misses: 139925069
-L2 Data Cache Accesses: 139926166
-L2 Data Cache Misses: 23265409
+Total Load/Store Instructions: 320320758
+Total Floating Point Instructions: 529907532
+L1 Data Cache Accesses: 476961480
+L1 Data Cache Misses: 139969049
+L2 Data Cache Accesses: 139969049
+L2 Data Cache Misses: 24193065
 --------------------------------------------------
 MMM Variant: kji, Size: 400
-Total Cycles: 2798390570
-Total Instructions: 1602242984
-Total Load/Store Instructions: 256320398
-Total Floating Point Instructions: 536385370
-L1 Data Cache Accesses: 478551744
-L1 Data Cache Misses: 139929705
-L2 Data Cache Accesses: 139928241
-L2 Data Cache Misses: 25600562
+Total Cycles: 2835284182
+Total Instructions: 1602244464
+Total Load/Store Instructions: 320323704
+Total Floating Point Instructions: 535255629
+L1 Data Cache Accesses: 479650202
+L1 Data Cache Misses: 139973614
+L2 Data Cache Accesses: 139973614
+L2 Data Cache Misses: 27340133
 --------------------------------------------------
 MMM Variant: ikj, Size: 400
-Total Cycles: 633306968
-Total Instructions: 1537443956
-Total Load/Store Instructions: 256320166
-Total Floating Point Instructions: 448068973
-L1 Data Cache Accesses: 322423393
-L1 Data Cache Misses: 16140180
-L2 Data Cache Accesses: 16139765
-L2 Data Cache Misses: 290614
+Total Cycles: 633328072
+Total Instructions: 1537443964
+Total Load/Store Instructions: 320320296
+Total Floating Point Instructions: 448166452
+L1 Data Cache Accesses: 322433996
+L1 Data Cache Misses: 16141584
+L2 Data Cache Accesses: 16141584
+L2 Data Cache Misses: 294016
 --------------------------------------------------
 MMM Variant: kij, Size: 400
-Total Cycles: 665233124
-Total Instructions: 1537605155
-Total Load/Store Instructions: 256320168
-Total Floating Point Instructions: 448222325
-L1 Data Cache Accesses: 324537360
-L1 Data Cache Misses: 16282970
-L2 Data Cache Accesses: 16283649
-L2 Data Cache Misses: 583170
+Total Cycles: 663328438
+Total Instructions: 1537605190
+Total Load/Store Instructions: 320320354
+Total Floating Point Instructions: 448364273
+L1 Data Cache Accesses: 324226896
+L1 Data Cache Misses: 16271684
+L2 Data Cache Accesses: 16271684
+L2 Data Cache Misses: 528660
 --------------------------------------------------
 MMM Variant: ijk, Size: 800
-Total Cycles: 18848790930
-Total Instructions: 11273608002
-Total Load/Store Instructions: 
+Total Cycles: 18832133697
+Total Instructions: 11273615113
+Total Load/Store Instructions: 2048658596
+Total Floating Point Instructions: 4625327193
+L1 Data Cache Accesses: 3074516842
+L1 Data Cache Misses: 597191183
+L2 Data Cache Accesses: 597191183
+L2 Data Cache Misses: 539736589
+--------------------------------------------------
+MMM Variant: jik, Size: 800
+Total Cycles: 14361586274
+Total Instructions: 11271690791
+Total Load/Store Instructions: 2048643552
+Total Floating Point Instructions: 4576707999
+L1 Data Cache Accesses: 3183116387
+L1 Data Cache Misses: 682785593
+L2 Data Cache Accesses: 682785593
+L2 Data Cache Misses: 550427219
+--------------------------------------------------
+MMM Variant: jki, Size: 800
+Total Cycles: 29959314202
+Total Instructions: 12808968547
+Total Load/Store Instructions: 2561287076
+Total Floating Point Instructions: 4270493037
+L1 Data Cache Accesses: 4666797321
+L1 Data Cache Misses: 1426330631
+L2 Data Cache Accesses: 1426330631
+L2 Data Cache Misses: 1025729227
+--------------------------------------------------
+MMM Variant: kji, Size: 800
+Total Cycles: 27977152193
+Total Instructions: 12808968746
+Total Load/Store Instructions: 2561287468
+Total Floating Point Instructions: 4358170635
+L1 Data Cache Accesses: 4676681251
+L1 Data Cache Misses: 1426630226
+L2 Data Cache Accesses: 1426630226
+L2 Data Cache Misses: 1028050640
+--------------------------------------------------
+MMM Variant: ikj, Size: 800
+Total Cycles: 5605780944
+Total Instructions: 12293768242
+Total Load/Store Instructions: 2561281652
+Total Floating Point Instructions: 3586352450
+L1 Data Cache Accesses: 2580788467
+L1 Data Cache Misses: 129423361
+L2 Data Cache Accesses: 129423361
+L2 Data Cache Misses: 2566978
+--------------------------------------------------
+MMM Variant: kij, Size: 800
+Total Cycles: 5737749291
+Total Instructions: 12294410658
+Total Load/Store Instructions: 2561281690
+Total Floating Point Instructions: 3587660222
+L1 Data Cache Accesses: 2608707368
+L1 Data Cache Misses: 131933589
+L2 Data Cache Accesses: 131933589
+L2 Data Cache Misses: 4181214
+--------------------------------------------------
+MMM Variant: ijk, Size: 1200
+Total Cycles: 71265045932
+Total Instructions: 38037618389
+Total Load/Store Instructions: 6913459548
+Total Floating Point Instructions: 15735387873
+L1 Data Cache Accesses: 10332845500
+L1 Data Cache Misses: 3183731357
+L2 Data Cache Accesses: 3183731357
+L2 Data Cache Misses: 1665125839
+--------------------------------------------------
+MMM Variant: jik, Size: 1200
+Total Cycles: 51256775415
+Total Instructions: 38033300172
+Total Load/Store Instructions: 6913453514
+Total Floating Point Instructions: 15442539483
+L1 Data Cache Accesses: 10712514762
+L1 Data Cache Misses: 3181119031
+L2 Data Cache Accesses: 3181119031
+L2 Data Cache Misses: 1648227702
+--------------------------------------------------
+MMM Variant: jki, Size: 1200
+Total Cycles: 110696568074
+Total Instructions: 43220181635
+Total Load/Store Instructions: 8642908452
+Total Floating Point Instructions: 14342170866
+L1 Data Cache Accesses: 15709496373
+L1 Data Cache Misses: 5488789906
+L2 Data Cache Accesses: 5488789906
+L2 Data Cache Misses: 3413972776
+--------------------------------------------------
+MMM Variant: kji, Size: 1200
+Total Cycles: 102603869746
+Total Instructions: 43220180780
+Total Load/Store Instructions: 8642906736
+Total Floating Point Instructions: 14549941345
+L1 Data Cache Accesses: 15714253301
+L1 Data Cache Misses: 5489599770
+L2 Data Cache Accesses: 5489599770
+L2 Data Cache Misses: 3380092225
+--------------------------------------------------
+MMM Variant: ikj, Size: 1200
+Total Cycles: 18575306142
+Total Instructions: 41484973520
+Total Load/Store Instructions: 8642885008
+Total Floating Point Instructions: 12103573395
+L1 Data Cache Accesses: 8720368465
+L1 Data Cache Misses: 831216641
+L2 Data Cache Accesses: 831216641
+L2 Data Cache Misses: 7958766
+--------------------------------------------------
+MMM Variant: kij, Size: 1200
+Total Cycles: 21046445392
+Total Instructions: 41486417470
+Total Load/Store Instructions: 8642885714
+Total Floating Point Instructions: 12110008762
+L1 Data Cache Accesses: 8887632560
+L1 Data Cache Misses: 838852011
+L2 Data Cache Accesses: 838852011
+L2 Data Cache Misses: 16937330
+--------------------------------------------------
+MMM Variant: ijk, Size: 1600
+Total Cycles: 170670384202
+Total Instructions: 90150431631
+Total Load/Store Instructions: 16386600432
+Total Floating Point Instructions: 37794203958
+L1 Data Cache Accesses: 24834903934
+L1 Data Cache Misses: 8345719127
+L2 Data Cache Accesses: 8345719127
+L2 Data Cache Misses: 4188317559
+--------------------------------------------------
+MMM Variant: jik, Size: 1600
+Total Cycles: 123806859370
+Total Instructions: 90142752420
+Total Load/Store Instructions: 16386589210
+Total Floating Point Instructions: 37258540237
+L1 Data Cache Accesses: 25876836077
+L1 Data Cache Misses: 8339722149
+L2 Data Cache Accesses: 8339722149
+L2 Data Cache Misses: 4363762084
+--------------------------------------------------
+MMM Variant: jki, Size: 1600
+Total Cycles: 268822687314
+Total Instructions: 102435881682
+Total Load/Store Instructions: 20485183746
+Total Floating Point Instructions: 34403684389
+L1 Data Cache Accesses: 37756416193
+L1 Data Cache Misses: 14632824998
+L2 Data Cache Accesses: 14632824998
+L2 Data Cache Misses: 8433048227
+--------------------------------------------------
+MMM Variant: kji, Size: 1600
+Total Cycles: 255542575545
+Total Instructions: 102435879422
+Total Load/Store Instructions: 20485179220
+Total Floating Point Instructions: 34949628765
+L1 Data Cache Accesses: 38388172870
+L1 Data Cache Misses: 14636724565
+L2 Data Cache Accesses: 14636724565
+L2 Data Cache Misses: 8660906334
+--------------------------------------------------
+MMM Variant: ikj, Size: 1600
+Total Cycles: 44459669665
+Total Instructions: 98327060275
+Total Load/Store Instructions: 20485131318
+Total Floating Point Instructions: 28688040670
+L1 Data Cache Accesses: 20690775537
+L1 Data Cache Misses: 2063086342
+L2 Data Cache Accesses: 2063086342
+L2 Data Cache Misses: 20367122
+--------------------------------------------------
+MMM Variant: kij, Size: 1600
+Total Cycles: 49719817190
+Total Instructions: 98329625422
+Total Load/Store Instructions: 20485132018
+Total Floating Point Instructions: 28705053040
+L1 Data Cache Accesses: 21142470625
+L1 Data Cache Misses: 2069483135
+L2 Data Cache Accesses: 2069483135
+L2 Data Cache Misses: 41794115
+--------------------------------------------------
+MMM Variant: ijk, Size: 2000
+Total Cycles: 348496986111
+Total Instructions: 176060054041
+Total Load/Store Instructions: 32004079652
+Total Floating Point Instructions: 73882537805
+L1 Data Cache Accesses: 49084164628
+L1 Data Cache Misses: 22414533464
+L2 Data Cache Accesses: 22414533464
+L2 Data Cache Misses: 13192677596
+--------------------------------------------------
+MMM Variant: jik, Size: 2000
+Total Cycles: 259090170865
+Total Instructions: 176048052105
+Total Load/Store Instructions: 32004059780
+Total Floating Point Instructions: 72774280367
+L1 Data Cache Accesses: 51235374593
+L1 Data Cache Misses: 22352480959
+L2 Data Cache Accesses: 22352480959
+L2 Data Cache Misses: 13423775330
+--------------------------------------------------
+MMM Variant: jki, Size: 2000
+Total Cycles: 600147870194
+Total Instructions: 200056091683
+Total Load/Store Instructions: 40008158948
+Total Floating Point Instructions: 67402292175
+L1 Data Cache Accesses: 76498121167
+L1 Data Cache Misses: 42864086493
+L2 Data Cache Accesses: 42864086493
+L2 Data Cache Misses: 29700278250
+--------------------------------------------------
+MMM Variant: kji, Size: 2000
+Total Cycles: 566355640311
+Total Instructions: 200056081275
+Total Load/Store Instructions: 40008138126
+Total Floating Point Instructions: 68336925591
+L1 Data Cache Accesses: 76423006303
+L1 Data Cache Misses: 42283554095
+L2 Data Cache Accesses: 42283554095
+L2 Data Cache Misses: 29013264978
+--------------------------------------------------
+MMM Variant: ikj, Size: 2000
+Total Cycles: 87337210267
+Total Instructions: 192036029248
+Total Load/Store Instructions: 40008022064
+Total Floating Point Instructions: 56031839908
+L1 Data Cache Accesses: 40351844272
+L1 Data Cache Misses: 4018230476
+L2 Data Cache Accesses: 4018230476
+L2 Data Cache Misses: 38554063
+--------------------------------------------------
+MMM Variant: kij, Size: 2000
+Total Cycles: 96905703650
+Total Instructions: 192040035329
+Total Load/Store Instructions: 40008022232
+Total Floating Point Instructions: 56063728395
+L1 Data Cache Accesses: 41235183936
+L1 Data Cache Misses: 4026583650
+L2 Data Cache Accesses: 4026583650
+L2 Data Cache Misses: 84860883
+--------------------------------------------------
