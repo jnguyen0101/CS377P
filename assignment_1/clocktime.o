@@ -1,0 +1,289 @@
+Clock Time Results:
+MMM Variant: ijk, Size: 50
+CPU Time Used: 0.000464 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 50
+Real Time Used: 0.000461 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 50
+CPU Time Used: 0.000465 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 50
+Real Time Used: 0.000463 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 50
+CPU Time Used: 0.000533 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 50
+Real Time Used: 0.000534 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 50
+CPU Time Used: 0.000509 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 50
+Real Time Used: 0.000499 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 50
+CPU Time Used: 0.000489 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 50
+Real Time Used: 0.000487 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 50
+CPU Time Used: 0.000562 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 50
+Real Time Used: 0.000492 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 100
+CPU Time Used: 0.003913 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 100
+Real Time Used: 0.003883 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 100
+CPU Time Used: 0.003692 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 100
+Real Time Used: 0.003689 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 100
+CPU Time Used: 0.004481 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 100
+Real Time Used: 0.004442 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 100
+CPU Time Used: 0.004229 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 100
+Real Time Used: 0.004245 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 100
+CPU Time Used: 0.003780 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 100
+Real Time Used: 0.003981 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 100
+CPU Time Used: 0.003988 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 100
+Real Time Used: 0.003997 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 200
+CPU Time Used: 0.042116 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 200
+Real Time Used: 0.042250 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 200
+CPU Time Used: 0.034562 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 200
+Real Time Used: 0.034539 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 200
+CPU Time Used: 0.049676 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 200
+Real Time Used: 0.049717 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 200
+CPU Time Used: 0.045525 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 200
+Real Time Used: 0.043836 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 200
+CPU Time Used: 0.030254 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 200
+Real Time Used: 0.030193 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 200
+CPU Time Used: 0.032132 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 200
+Real Time Used: 0.032084 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 400
+CPU Time Used: 0.416760 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 400
+Real Time Used: 0.416155 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 400
+CPU Time Used: 0.368273 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 400
+Real Time Used: 0.368362 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 400
+CPU Time Used: 1.053892 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 400
+Real Time Used: 1.054672 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 400
+CPU Time Used: 1.061504 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 400
+Real Time Used: 1.061036 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 400
+CPU Time Used: 0.239908 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 400
+Real Time Used: 0.241143 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 400
+CPU Time Used: 0.251905 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 400
+Real Time Used: 0.251885 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 800
+CPU Time Used: 7.074298 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 800
+Real Time Used: 7.349511 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 800
+CPU Time Used: 5.447856 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 800
+Real Time Used: 5.453713 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 800
+CPU Time Used: 11.376520 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 800
+Real Time Used: 11.382681 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 800
+CPU Time Used: 10.634175 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 800
+Real Time Used: 10.632618 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 800
+CPU Time Used: 2.122236 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 800
+Real Time Used: 2.141183 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 800
+CPU Time Used: 2.193704 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 800
+Real Time Used: 2.185878 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 1200
+CPU Time Used: 27.100428 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 1200
+Real Time Used: 27.132294 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 1200
+CPU Time Used: 19.460087 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 1200
+Real Time Used: 19.491409 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 1200
+CPU Time Used: 41.945555 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 1200
+Real Time Used: 41.979797 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 1200
+CPU Time Used: 38.948529 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 1200
+Real Time Used: 38.953271 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 1200
+CPU Time Used: 7.067358 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 1200
+Real Time Used: 7.066124 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 1200
+CPU Time Used: 8.063845 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 1200
+Real Time Used: 8.075081 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 1600
+CPU Time Used: 65.014683 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 1600
+Real Time Used: 65.051744 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 1600
+CPU Time Used: 47.049954 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 1600
+Real Time Used: 47.041023 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 1600
+CPU Time Used: 104.378913 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 1600
+Real Time Used: 104.593484 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 1600
+CPU Time Used: 94.673422 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 1600
+Real Time Used: 94.684738 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 1600
+CPU Time Used: 16.924513 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 1600
+Real Time Used: 16.978790 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 1600
+CPU Time Used: 19.020264 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 1600
+Real Time Used: 19.038498 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 2000
+CPU Time Used: 132.669954 seconds
+--------------------------------------------------
+MMM Variant: ijk, Size: 2000
+Real Time Used: 132.765572 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 2000
+CPU Time Used: 101.328662 seconds
+--------------------------------------------------
+MMM Variant: jik, Size: 2000
+Real Time Used: 101.467353 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 2000
+CPU Time Used: 223.730650 seconds
+--------------------------------------------------
+MMM Variant: jki, Size: 2000
+Real Time Used: 223.089772 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 2000
+CPU Time Used: 211.211293 seconds
+--------------------------------------------------
+MMM Variant: kji, Size: 2000
+Real Time Used: 211.387626 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 2000
+CPU Time Used: 33.234140 seconds
+--------------------------------------------------
+MMM Variant: ikj, Size: 2000
+Real Time Used: 33.304668 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 2000
+CPU Time Used: 36.841147 seconds
+--------------------------------------------------
+MMM Variant: kij, Size: 2000
+Real Time Used: 37.195318 seconds
+--------------------------------------------------
