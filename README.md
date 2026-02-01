@@ -24,6 +24,6 @@ Assignments in this repository cover concepts such as:
   ├── assignment_1/        # Benchmarks six loop-order matrix multiplication variants using PAPI
   │   ├── Makefile
   │   ├── mmm.c
-  |   ├── tables/
+  |   └── tables/
   └── README.md            # Project overview and documentation
 </pre>
