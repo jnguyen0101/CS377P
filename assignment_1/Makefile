@@ -1,14 +1,9 @@
 CC = gcc
-CFLAGS = -O3
-LIBS = -lpapi
 
 TARGET = mmm
-SRCS = mmm.c
 
-all: $(TARGET)
-
-$(TARGET): $(SRCS)
-	$(CC) $(CFLAGS) -o $(TARGET) $(SRCS) $(LIBS)
+all:
+	$(CC) -O3 -o $(TARGET) mmm.c -lpapi
 
 clean:
 	rm -f $(TARGET)

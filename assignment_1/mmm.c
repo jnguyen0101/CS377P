@@ -246,8 +246,8 @@ void flush_cache() {
 }
 
 int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        printf("Usage: %s <papi|clocktime>\n", argv[0]);
+    if (argc < 2 || argc > 3) {
+        printf("Usage: %s <papi|clocktime> [size]\n", argv[0]);
         return 1;
     }
 
@@ -261,24 +261,48 @@ int main(int argc, char *argv[]) {
     mmm_fun mmm_variants[NUM_VARIANTS] = {ijk, jik, jki, kji, ikj, kij};
 
     if (strcmp(argv[1], "papi") == 0) {
-        // Run PAPI measurements
-        printf("PAPI Results:\n");
-        for (int i = 0; i < NUM_SIZES; i++) {
-            for (int j = 0; j < NUM_VARIANTS; j++) {
-                run_mmm_PAPI(mmm_variants[j], sizes[i], variants[j]);
+        printf("PAPI Results:\n\n");
+
+        // Run all PAPI measurements
+        if (argv[2] == NULL) {
+            for (int i = 0; i < NUM_SIZES; i++) {
+                for (int j = 0; j < NUM_VARIANTS; j++) {
+                    run_mmm_PAPI(mmm_variants[j], sizes[i], variants[j]);
+                }
             }
+        } else if (argv[2] != NULL && atoi(argv[2]) > 0) {
+            // Run specific size if provided
+            int specific_size = atoi(argv[2]);
+            for (int j = 0; j < NUM_VARIANTS; j++) {
+                run_mmm_PAPI(mmm_variants[j], specific_size, variants[j]);
+            }
+        } else {
+            printf("Error: Invalid size '%s'\n", argv[2]);
+            return 1;
         }
     } else if (strcmp(argv[1], "clocktime") == 0) {
-        // Run clocktime measurements
-        printf("Clock Time Results:\n");
-        for (int i = 0; i < NUM_SIZES; i++) {
-            for (int j = 0; j < NUM_VARIANTS; j++) {
-                run_mmm_clocktime(mmm_variants[j], sizes[i], variants[j]);
+        printf("Clock Time Results:\n\n");
+
+        // Run all clocktime measurements
+        if (argv[2] == NULL) {
+            for (int i = 0; i < NUM_SIZES; i++) {
+                for (int j = 0; j < NUM_VARIANTS; j++) {
+                    run_mmm_clocktime(mmm_variants[j], sizes[i], variants[j]);
+                }
             }
+        } else if (argv[2] != NULL && atoi(argv[2]) > 0) {
+            // Run specific size if provided
+            int specific_size = atoi(argv[2]);
+            for (int j = 0; j < NUM_VARIANTS; j++) {
+                run_mmm_clocktime(mmm_variants[j], specific_size, variants[j]);
+            }
+        } else {
+            printf("Error: Invalid size '%s'\n", argv[2]);
+            return 1;
         }
     } else {
         printf("Error: Invalid option '%s'\n", argv[1]);
-        printf("Usage: %s <papi|clocktime>\n", argv[0]);
+        printf("Usage: %s <papi|clocktime> [size]\n", argv[0]);
         return 1;
     }
 
