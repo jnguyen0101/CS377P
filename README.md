@@ -1,4 +1,4 @@
-# CS 377P — Programming for Performance (UT Austin)
+# CS 377P: Programming for Performance
 
 This repository contains my programming assignments, labs, and performance-focused projects completed for **CS 377P: Programming for Performance** at the **University of Texas at Austin**.
 
@@ -22,7 +22,8 @@ Assignments in this repository cover concepts such as:
 <pre>
   CS377P/
   ├── assignment_1/        # Benchmarks six loop-order matrix multiplication variants using PAPI
-  │   ├── mmm.c
   │   ├── Makefile
+  │   ├── mmm.c
+  |   ├── tables/
   └── README.md            # Project overview and documentation
 </pre>
