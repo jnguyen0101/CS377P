@@ -1,6 +1,6 @@
 # CS 377P: Programming for Performance
 
-This repository contains my programming assignments, labs, and performance-focused projects completed for **CS 377P: Programming for Performance** at the **University of Texas at Austin**.
+This repository contains the programming assignments completed for **CS 377P: Programming for Performance** at the **University of Texas at Austin**.
 
 The course explores how modern computer architectures impact program efficiency and how to write high-performance software through optimization, benchmarking, and low-level systems programming.
 
