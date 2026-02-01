@@ -1,0 +1,107 @@
+CS 377P: Programming for Performance
+Assignment 1: Performance counters
+Due date: Feb 6, 2026, 10:00PM
+Late submission policy: Submissions can be at most 1 day late. There will be a
+10% penalty for late submissions.
+--------------------------------------------------------------------------------
+Description
+
+1) Write C code for the 6 variants of matrix-matrix multiply (MMM)  you can
+generate by permuting loops in the standard three-nested loop version of MMM.
+The data type in the matrix should be complex double. You will need to include
+the header file <complex.h>.
+
+- Instrument your implementations to use PAPI to measure:
+    - Total cycles
+    - Total instructions
+    - Total Load Store Instructions
+    - Total Floating Point Instructions
+    - L1 data cache accesses and misses
+    - L2 data cache accesses and misses
+
+Remember that you may not be able to measure all these values at the same time.
+
+- Compile your code in gcc with flags  '-lpapi -O3'
+- Collect these measurements for the following 8 matrix sizes: 50x50, 100x100,
+  200x200, 400x400, 800x800, 1200x1200, 1600x1600 and 2000x2000. To ensure that
+  there is no interference, make sure that you are the only one running
+  experiments on the machine, and do one measurement at a time.
+- You can collect measurements on the following 5 CS machines
+  (with your CS login): orcrist-20.cs.utexas.edu, orcrist-21, orcrist-24,
+  orcrist-25, orcrist-28.
+- Create a table in which the rows correspond to the loop-order variant (i-j-k,
+  j-i-k, j-k-i, k-j-i, i-k-j, k-i-j) and the columns correspond to the matrix
+  sizes, and fill in each position in the table with four values: L1 and L2 miss
+  rate, total load and store instructions, and the number of committed floating
+  point instructions. You can create four separate tables if you prefer.
+- Answer the following questions.
+    - For the smallest matrix size, do the L1 and L2 miss rates vary for the
+      different loop-order variants? Do they vary for the larger matrix sizes?
+      Is there any difference in behavior between the different problem sizes?
+      Can you explain intuitively the reasons for this behavior?
+    - Re-instrument your code by removing PAPI calls, and using clock_gettime
+      with CLOCK_THREAD_CPUTIME_ID to measure the execution times for the six
+      versions of MMM and the eight matrix sizes specified above. How do your
+      timing measurements compare to the execution times you obtained from
+      using PAPI? Repeat this study using CLOCK_REALTIME. Explain your results
+      briefly.
+
+Hint: To check cache sizes on the machine, run:  lscpu
+
+2) Answer the following questions, using a few sentences for each one.
+
+- What is Moore's Law? What is Amdahl's Law? Which of these is an empirical
+  observation and which of these is a mathematical fact?
+- In the earliest ISA's, memory could only be accessed using the absolute
+  addressing mode. What problems arise in implementing loops with such an ISA?
+  How we get around these problems in today's ISA's?
+- What are data and control dependences? Give simple examples to illustrate
+  these concepts.
+- Explain out-of-order execution and in-order retirement/commit. Why do
+  high-performance processors execute instructions out of order but retire them
+  in order? What hardware structure(s) are used to implement in-order
+  retirement?
+- Consider the invariants for retirement in OOO execution with renaming shown in
+  the lecture slides. Why do we need to check the condition "(R3.PR# =
+  ROB[n].PR#") before updating R3.v ? Explain what would go wrong if we did not
+  check this condition before updating R3.v.
+- What is the typical branch prediction accuracy in modern processors? In
+  lecture, we said "A correctly predicted branch is essentially a NO-OP as far
+  as performance is concerned." Explain this statement in a few sentences.
+--------------------------------------------------------------------------------
+Deliverables
+
+Submit (in canvas) the following two files:
+- A .tar.gz file with your code, a README.txt and a Makefile. 
+    - The README.txt describes how to run your program and what the output will
+      be. A reasonable output will be pairs of "name of measured event, value".
+    - With the Makefile, your code should be compiled on the 5 CS machines by
+      running only "make".
+- A report (in .pdf) containing the tables, and the answers to the questions in
+  both parts.
+--------------------------------------------------------------------------------
+Grading
+
+Code: 40 points
+Measurements (plots): 30 points
+Explanation: 10 points
+Answers to short questions in (2): 20 points
+
+Please note that we will check your source code. Your code should at least
+include matrix multiplication, time measurement, PAPI measurement, and cache
+clean-up.
+--------------------------------------------------------------------------------
+PAPI:
+To see which papi counters are available on a host, run:
+
+papi_avail
+
+To see which papi counters can be collected at the same time, run:
+
+papi_event_chooser
+
+The PAPI website has a lot of information: https://icl.utk.edu/papi/.
+Here's the PAPI users guide:
+https://icl.utk.edu/projects/papi/files/documentation/PAPI_USER_GUIDE_23.htm
+
+"Warning! num_cntrs is more than num_mpx_cntrs" can be ignored.
