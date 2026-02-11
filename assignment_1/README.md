@@ -72,3 +72,20 @@ Example Clocktime Output:
 MMM Variant: ijk, Size: 50
 CPU Time Used: 0.000464 seconds
 ```
+
+## Directory Structure
+
+```
+  CS377P/assignment_1
+  ├── tables/                               # Collected data for each matrix variant and size
+  │   ├── L1_Miss_Rates.csv
+  │   ├── L2_Miss_Rates.csv
+  │   ├── Total_Floating_Point_Ins.csv
+  │   └── Total_Load_Store_Ins.csv
+  ├── assignment_1.txt                      # Assignment instructions
+  ├── clocktime.o                           # Output for clock_gettime
+  ├── Makefile                              # Build script for compiling mmm.c
+  ├── mmm.c                                 # Main source code for MMM and measurements
+  ├── papi.o                                # Output for PAPI
+  └── README.md                             # Project overview and documentation
+```

@@ -37,13 +37,9 @@ locality
 
 ## Repository Structure
 
-<pre>
+```
   CS377P/
   ├── assignment_1/          # Benchmarks six loop-order matrix multiplication variants using PAPI
-  │   ├── Makefile
-  │   ├── mmm.c
-  │   └── tables/
   ├── assignment_2/          # Explores how compilers translate and optimize code
-  │   ├── test_function.c
-  └── README.md              # Project overview and documentation
-</pre>
+  └── README.md              # Repository overview and documentation
+```

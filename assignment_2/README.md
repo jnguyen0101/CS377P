@@ -37,3 +37,12 @@ The following settings are used in Compiler Explorer:
 
 - **Compiler Tool:** [Compiler Explorer](https://godbolt.org/)
 - **Instruction Set Manual:** [Felix Cloutier x86 Reference](https://www.felixcloutier.com/x86/).
+
+## Directory Structure
+
+```
+  CS377P/assignment_2
+  ├── assignment_2.txt                      # Assignment instructions
+  ├── test_function.c                       # Function used for this study
+  └── README.md                             # Project overview and documentation
+```
