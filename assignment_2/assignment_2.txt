@@ -1,0 +1,171 @@
+CS 377P: Programming for Performance
+Assignment 2: Compiler optimizations and x86-64 ISA
+Due date: February 18, 2026, 10:00PM
+Late submission policy: Submissions can be at most 1 day late. There will be a
+10% penalty for late submissions.
+
+--------------------------------------------------------------------------------
+Description
+
+The objective of this assignment is to teach you about compiler optimizations
+and also familiarize you with the x86-64 ISA. We will use the Compiler Explorer
+tool, which you can access at https://godbolt.org. This tool lets you compile
+programs in a variety of languages using different compilers, and it shows you
+the assembly code produced for that program using that compiler.
+You should be prepared to spend 10-15 minutes initially playing with the tool to
+familiarize yourself with it. You will also need to go online to figure out what
+instructions in the x86-64 ISA do.
+One useful reference is https://www.felixcloutier.com/x86/   but you may find it
+easier to search on the Internet for individual instructions.
+
+Since the x86 ISA can operate on data of different sizes, you should make sure
+you understand the conventions for specifying data lengths for operands and
+registers. For example, "rdi" is the name of a 64-bit register, while "edi"
+refers to the 32 least significant bits of the same register. If this is
+confusing to you, read the lecture notes and online material to get this clear
+before you start the assignment.
+
+The assembly code will be different for different compilers, and even for the
+same compiler, the assembly code will be different in general for different
+optimization levels, so it is important for you to read the instructions below
+to select the right compiler and optimization levels for each study. In
+addition, x86 code can be displayed in AT&T syntax or Intel syntax as we
+discussed in class. For this assignment, we will use AT&T syntax.
+
+1. Test program: The following C program is available as a sample program in the
+Compiler Explorer tool. Load that program or type the listing below into code
+window. In the drop-down menu at the top of the code window, you should select
+"C" to tell the tool you want to compile a C program.
+
+    int testFunction(int* input, int length) {
+    int sum = 0;
+    for (int i = 0; i < length; ++i) {
+        sum += input[i];
+    }
+    return sum;
+    }
+
+2. Compiler:   We will use x86-64 gcc 9.2 exclusively for this assignment. At
+the top of the code window, there is a button labeled "+ Add new". Click on this
+and it will drop down a menu from which you select "Compiler". A new window for
+the assembly code will be created and it has a button on top using which you can
+select the appropriate compiler. It is important to select the right one - we
+will not grade your assignment if you show us code with a different compiler.
+
+    i) At the top of the assembly code window, you will find a check box labeled
+    "Intel". Checking this box will display the assembly code in Intel format.
+    You should uncheck this box since we will work with AT&T syntax, which is
+    easier to understand.
+
+    ii) Optimization level: there is a text box at the top of the assembly code 
+    window which you can use to pass flags to the compiler. For this assignment,
+    we will study two optimization levels: "-O1" and "-O3". As explained in
+    class, optimization level O1 generates simple but possibly inefficient code
+    whereas optimization level O3 generates more efficient code. For the given
+    test programs, optimization level O3 generates vector instructions where O1
+    generates scalar instructions.
+
+3. Assembly code with O1: here is the assembly code we obtained. Make sure you
+see this code before proceeding.
+
+    testFunction:
+    testl %esi, %esi
+    jle .L4
+    movq %rdi, %rax
+    leal -1(%rsi), %edx
+    leaq 4(%rdi,%rdx,4), %rcx
+    movl $0, %edx
+    .L3:
+    addl (%rax), %edx
+    addq $4, %rax
+    cmpq %rcx, %rax
+    jne .L3
+    .L1:
+    movl %edx, %eax
+    ret
+    .L4:
+    movl $0, %edx
+    jmp .L1
+
+    a) This code does not use the stack since there are enough registers in the
+    x86-64 ISA for the parameters and return value to be passed in registers.
+    The standard convention on x86-64 is that the first parameter is passed in
+    register "rdi/edi"; if it is 64-bit value like an address, you can access it
+    in the callee code by reading "rdi" and if it is a 32-bit value like an int,
+    it is passed in the bottom 32 bits of this register and you access it as
+    "edi" in the callee code. The second parameter is passed in register
+    "rsi/esi" by convention and the return value is passed in register
+    "rax/eax".
+
+        i) Annotate the assembly language instructions in the code above with
+        comments describing what they do. Here is an example of what we expect.
+
+            testFunction:
+            testl %esi, %esi           ; Test the value of length, which is passed in register esi as a 64-bit value
+            jle .L4                    ; If this value is less than or equal to zero, jump to L4
+            movq %rdi, %rax            ; Move the starting address of the array input, passed in register rdi, to register rax
+            leal -1(%rsi), %edx
+            leaq 4(%rdi,%rdx,4), %rcx
+            movl $0, %edx
+            .....
+
+        ii) Write a short paragraph giving the big picture of how this code
+        works. This paragraph can start with the following sentences:
+
+        "Parameter input is a 64-bit address, and it is passed in register rdi.
+        Parameter length is a 32-bit int, so it is passed in esi.
+
+        The code first checks to see if length is less than or equal to zero. If
+        so, it jumps to L4, where the integer value 0 is written to register
+        edx, and code jumps to L1 where this value is moved to register eax. The
+        procedure then returns. This is correct since the return value should be
+        zero if the array length is not positive.
+
+        If the length is positive, ....."
+
+        You get the idea.
+
+4. Assembly code with -O3: Repeat this with the optimization level set to -O3.
+You will find that the generated code is bigger and more complex. Part of your
+job is to figure how this code works. Here are some hints that will help you.
+
+If you look at the loop in the assembly code, you will see that it uses vectors
+registers (xmm0 and xmm2)  and vector instructions (paddd). The vector registers
+are 128 bits long, so each one can store 4 ints. Vectorization is performed by
+loading 4 elements of the array at a time into register xmm2, and adding these 4
+elements to vector register xmm0. Vector register xmm0 keeps a "running sum
+vector" with four elements so one of these elements will have the value of
+(input[0]+input[4]+input[8]....), the next one will have the value of
+(input[1]+input[5]+input[9]+...)  and so on.
+
+Once the loop is done, you need to add up the 4 elements in the running sum
+vector in register xmm0. The code below the loop does this, and it uses the
+instruction PSRLDQ, which is described at the end of this assignment.
+
+The code also has to handle the case when the length of the input array is not a
+multiple of 4. This is handled by the last chunk of code before the returns.
+
+These hints should be enough for you to be able to make sense of the assembly
+listing, but you will have to look up the meaning of individual instructions.
+
+    i) Annotate the assembly language instructions with comments describing what
+    they do.
+
+    ii) Write a short narrative giving the big picture of how this code works.
+
+5.  Optimizations: Using the terminology introduced in lecture, explain what
+optimizations are performed by the compiler with optimization level O3 that are
+not performed if the optimization level is O1.
+
+6. Optimizations: In the source code, replace the next-to-last line "return
+sum;" with "return 0;" and compile with -O1. Annotate the assembly code produced
+with comments. Using the terminology introduced in lecture, explain what
+optimizations are performed by the compiler to produce this code.
+
+--------------------------------------------------------------------------------
+What to turn in
+Turn in a text file with the annotated assembly listings, the descriptions of
+the codes, and the answers to (5) and (6).
+
+
+
