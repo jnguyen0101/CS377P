@@ -41,7 +41,7 @@ The following settings are used in Compiler Explorer:
 ## Directory Structure
 
 ```
-  CS377P/assignment_2
+  CS377P/assignment_2/
   ├── assignment_2.txt                      # Assignment instructions
   ├── test_function.c                       # Function used for this study
   └── README.md                             # Project overview and documentation

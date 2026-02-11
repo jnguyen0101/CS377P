@@ -76,7 +76,7 @@ CPU Time Used: 0.000464 seconds
 ## Directory Structure
 
 ```
-  CS377P/assignment_1
+  CS377P/assignment_1/
   ├── tables/                               # Collected data for each matrix variant and size
   │   ├── L1_Miss_Rates.csv
   │   ├── L2_Miss_Rates.csv
