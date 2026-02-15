@@ -27,17 +27,19 @@ testFunction:
 
 Write a short paragraph giving the big picture of how this code works:
 
-The code first checks if the length is less than or equal to zero. If it is,
-then it jumps to L4, where the sum is set to 0 before it jumps to L1 and sets
-that as the return value. This is correct because the return value should be
-zero if the array length is zero or negative. Otherwise, the code sets up a loop
-by copying the array's starting address into the rax register to be used as a
-pointer to the array's elements and calculating the end address of the array
-into the rcx register. The loop starts by adding the element at the current
-pointer to the sum, and then the pointer moves to the next element. This process
-is repeated until the current address is equal to the end address, which means
-that there are no more elements in the array. It then falls through to L1, where
-the sum is set as the return value and is returned.
+The array input is a 64-bit address, and it is passed in register rdi. The
+length of the array is a 32-bit int, and it is passed in register esi. The code
+first checks if the length is less than or equal to zero. If it is, then it
+jumps to L4, where the sum is set to 0 before it jumps to L1 and sets that as
+the return value. This is correct because the return value should be zero if the
+array length is zero or negative. Otherwise, the code sets up a loop by copying
+the array's starting address into the rax register to be used as a pointer to
+the array's elements and calculating the end address of the array into the rcx
+register. The loop starts by adding the element at the current pointer to the
+sum, and then the pointer moves to the next element. This process is repeated
+until the current address is equal to the end address, which means that there
+are no more elements in the array. It then falls through to L1, where the sum is
+set as the return value and is returned.
 
 --------------------------------------------------------------------------------
 
@@ -105,10 +107,11 @@ testFunction:
 
 Write a short narrative giving the big picture of how this code works:
 
-The code first checks if the length of the array is less than or equal to zero.
-If it is, then it jumps to L7, where the return value is set to 0. This is
-correct because the return value should be zero if the array length is zero or
-negative.
+The array input is a 64-bit address, and it is passed in register rdi. The
+length of the array is a 32-bit int, and it is passed in register esi. The code
+first checks if the length of the array is less than or equal to zero. If it is,
+then it jumps to L7, where the return value is set to 0. This is correct because
+the return value should be zero if the array length is zero or negative.
 If the length is greater than 0 but less than or equal to 3, then it
 jumps to L8. Here, it adds the next one, two, or three elements to the sum
 without using a loop, checking after each addition if it is at the end of the
