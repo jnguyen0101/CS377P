@@ -42,6 +42,7 @@ The following settings are used in Compiler Explorer:
 
 ```
   CS377P/assignment_2/
+  ├── test_function_asm/                    # Test functions in assembly code
   ├── assignment_2.txt                      # Assignment instructions
   ├── test_function.c                       # Function used for this study
   └── README.md                             # Project overview and documentation

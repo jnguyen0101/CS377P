@@ -1,107 +1,168 @@
-Assembly Code with O1:
-
-testFunction:
-        testl   %esi, %esi
-        jle     .L4
-        movq    %rdi, %rax
-        leal    -1(%rsi), %edx
-        leaq    4(%rdi,%rdx,4), %rcx
-        movl    $0, %edx
-.L3:
-        addl    (%rax), %edx
-        addq    $4, %rax
-        cmpq    %rcx, %rax
-        jne     .L3
-.L1:
-        movl    %edx, %eax
-        ret
-.L4:
-        movl    $0, %edx
-        jmp     .L1
-
-
-Paragraph of how the code works:
+Jenny Nguyen
+jtn2497
 
 --------------------------------------------------------------------------------
 
-Assembly Code with O3:
+Assembly Code with O1 Annotated:
 
 testFunction:
-        testl   %esi, %esi
-        jle     .L7
-        leal    -1(%rsi), %eax
-        cmpl    $3, %eax
-        jbe     .L8
-        movl    %esi, %edx
-        movq    %rdi, %rax
-        pxor    %xmm0, %xmm0
-        shrl    $2, %edx
-        salq    $4, %rdx
-        addq    %rdi, %rdx
-.L4:
-        movdqu  (%rax), %xmm2
-        addq    $16, %rax
-        paddd   %xmm2, %xmm0
-        cmpq    %rdx, %rax
-        jne     .L4
-        movdqa  %xmm0, %xmm1
-        movl    %esi, %edx
-        psrldq  $8, %xmm1
-        andl    $-4, %edx
-        paddd   %xmm1, %xmm0
-        movdqa  %xmm0, %xmm1
-        psrldq  $4, %xmm1
-        paddd   %xmm1, %xmm0
-        movd    %xmm0, %eax
-        testb   $3, %sil
-        je      .L11
+        testl   %esi, %esi               ; Test length, which is stored in esi, and set flags based on outcome
+        jle     .L4                      ; If the value is <= 0, jump to L4
+        movq    %rdi, %rax               ; Move the starting address of the array, stored in rdi, into rax
+        leal    -1(%rsi), %edx           ; Load length - 1 and store in edx
+        leaq    4(%rdi,%rdx,4), %rcx     ; Calculate the end address of the array and store in rcx
+        movl    $0, %edx                 ; Initialize sum to 0
 .L3:
-        movslq  %edx, %rcx
-        addl    (%rdi,%rcx,4), %eax
-        leal    1(%rdx), %ecx
-        cmpl    %ecx, %esi
-        jle     .L1
-        movslq  %ecx, %rcx
-        addl    (%rdi,%rcx,4), %eax
-        leal    2(%rdx), %ecx
-        cmpl    %ecx, %esi
-        jle     .L1
-        movslq  %ecx, %rcx
-        addl    $3, %edx
-        addl    (%rdi,%rcx,4), %eax
-        cmpl    %edx, %esi
-        jle     .L1
-        movslq  %edx, %rdx
-        addl    (%rdi,%rdx,4), %eax
-        ret
+        addl    (%rax), %edx             ; Add element in array to sum
+        addq    $4, %rax                 ; Iterate to the next element of the array
+        cmpq    %rcx, %rax               ; Compare current address of array to end address and set flags
+        jne     .L3                      ; If current address != end address then jump to L3 (continue loop)
+.L1:
+        movl    %edx, %eax               ; Store sum in eax (end of loop)
+        ret                              ; Return
+.L4:
+        movl    $0, %edx                 ; If length is <= 0, sum is 0
+        jmp     .L1                      ; Jump to L1
+
+
+Write a short paragraph giving the big picture of how this code works:
+
+The code first checks if the length is less than or equal to zero. If it is,
+then it jumps to L4, where the sum is set to 0 before it jumps to L1 and sets
+that as the return value. This is correct because the return value should be
+zero if the array length is zero or negative. Otherwise, the code sets up a loop
+by copying the array's starting address into the rax register to be used as a
+pointer to the array's elements and calculating the end address of the array
+into the rcx register. The loop starts by adding the element at the current
+pointer to the sum, and then the pointer moves to the next element. This process
+is repeated until the current address is equal to the end address, which means
+that there are no more elements in the array. It then falls through to L1, where
+the sum is set as the return value and is returned.
+
+--------------------------------------------------------------------------------
+
+Assembly Code with O3 Annotated:
+
+testFunction:
+        testl   %esi, %esi               ; Test length, which is stored in esi, and set flags based on outcome
+        jle     .L7                      ; If the value is <= 0, jump to L7
+        leal    -1(%rsi), %eax           ; Load length - 1 and store in eax
+        cmpl    $3, %eax                 ; Compare 3 and length - 1
+        jbe     .L8                      ; If length - 1 <= 3, jump to L8
+        movl    %esi, %edx               ; Move length into edx
+        movq    %rdi, %rax               ; Move the starting address of the array, stored in rdi, into rax
+        pxor    %xmm0, %xmm0             ; Set xmm0 to 0
+        shrl    $2, %edx                 ; Shift length right by 2 bits (length / 4)
+        salq    $4, %rdx                 ; Shift new length left by 4 bits ((length / 4) * 16)
+        addq    %rdi, %rdx               ; Calculate the end address of the array and store in rdx
+.L4:
+        movdqu  (%rax), %xmm2            ; Load 4 integers from array into xmm2
+        addq    $16, %rax                ; Advance array pointer by 16 bytes
+        paddd   %xmm2, %xmm0             ; Add xmm0[i] = xmm0[i] + xmm2[i] in parallel for 4 iterations
+        cmpq    %rdx, %rax               ; Compare current address of array to end address and set flags
+        jne     .L4                      ; If current address != end address then jump to L4 (continue loop)
+        movdqa  %xmm0, %xmm1             ; Copy sums in xmm0 to xmm1
+        movl    %esi, %edx               ; Move length into edx
+        psrldq  $8, %xmm1                ; Shift xmm1 right by 8 bytes
+        andl    $-4, %edx                ; Set edx to length rounded down by 4
+        paddd   %xmm1, %xmm0             ; Add top 2 integers to bottom 2 integers
+        movdqa  %xmm0, %xmm1             ; Copy sums in xmm0 to xmm1 again
+        psrldq  $4, %xmm1                ; Shift xmm1 right by 4 bytes
+        paddd   %xmm1, %xmm0             ; Add top integer to bottom integer
+        movd    %xmm0, %eax              ; Move result into eax
+        testb   $3, %sil                 ; Check if the length was a multiple of 4
+        je      .L11                     ; Jump to L11 if it was
+.L3:
+        movslq  %edx, %rcx               ; Get the current i
+        addl    (%rdi,%rcx,4), %eax      ; Add element to the total
+        leal    1(%rdx), %ecx            ; Increment i by 1
+        cmpl    %ecx, %esi               ; Check if there are anymore elements left in array
+        jle     .L1                      ; If not, jump to L1
+        movslq  %ecx, %rcx               ; Get the current i
+        addl    (%rdi,%rcx,4), %eax      ; Add element to the total
+        leal    2(%rdx), %ecx            ; Increment i by 1
+        cmpl    %ecx, %esi               ; Check if there are anymore elements left in array
+        jle     .L1                      ; If not, jump to L1
+        movslq  %ecx, %rcx               ; Get the current i
+        addl    $3, %edx                 ; Increment i by 1
+        addl    (%rdi,%rcx,4), %eax      ; Add element to the total
+        cmpl    %edx, %esi               ; Check if there are anymore elements left in array
+        jle     .L1                      ; If not, jump to L1
+        movslq  %edx, %rdx               ; Get the current i
+        addl    (%rdi,%rdx,4), %eax      ; Add element to the total
+        ret                              ; Return
 .L7:
-        xorl    %eax, %eax
-.L1:
-        ret
+        xorl    %eax, %eax               ; Set sum to 0
+.L1: 
+        ret                              ; Return
 .L11:
-        ret
+        ret                              ; Return
 .L8:
-        xorl    %edx, %edx
-        xorl    %eax, %eax
-        jmp     .L3
+        xorl    %edx, %edx               ; Set i to 0
+        xorl    %eax, %eax               ; Set sum to 0
+        jmp     .L3                      ; Jump to L3
 
 
-Paragraph of how the code works:
+Write a short narrative giving the big picture of how this code works:
+
+The code first checks if the length of the array is less than or equal to zero.
+If it is, then it jumps to L7, where the return value is set to 0. This is
+correct because the return value should be zero if the array length is zero or
+negative.
+If the length is greater than 0 but less than or equal to 3, then it
+jumps to L8. Here, it adds the next one, two, or three elements to the sum
+without using a loop, checking after each addition if it is at the end of the
+array. Once all elements are added, the final sum is returned.
+Otherwise if the length is greater than 4, then the code sets up a loop by
+copying the array's starting address into the rax register to be used as a
+pointer to the array's elements and calculating the end address of the array
+into the rdx register. In the loop, the code processes the array 4 integers at
+a time. In each iteration, the integers are packed in xmm0, and then the pointer
+is advanced to the next 4 integers. This process is repeated until the current
+address is equal to the end address. The code then adds the partial sums
+together until it gets the final result. Here, if the original length was not a
+multiple of four, then there are still elements in the array that need to be
+added since the integers were processed 4 at a time. It then falls through to
+L3, where it adds the next one, two, or three elements to the sum, checking
+after each addition if it is at the end of the array. Once all elements are
+added, the final sum is returned. If the original length was a multiple of four,
+then it jumps to L11 and returns the sum.
 
 --------------------------------------------------------------------------------
 
-Optimizations:
+Using the terminology introduced in lecture, explain what optimizations are
+performed by the compiler with optimization level O3 that are not performed if
+the optimization level is O1:
+
+Optimizations that were performed by the compiler at O3 that are not performed
+in O1 are loop unrolling and strength reduction.
+In the O3 code, loop unrolling occurs when 4 integers are processed at a time
+and added to the sum in parallel. The remaining 1-3 integers in the array are
+then added as well. Strength reduction occurs in the bitwise shifts such as
+"shrl $2, %edx" and "salq $4, %rdx" instead of the multiplications and divisions
+used in the O1 such as "leaq 4(%rdi,%rdx,4), %rcx."
+
+--------------------------------------------------------------------------------
+
+"return 0" Assembly Code with O1 Annotated:
 
 testFunction:
-        testl   %esi, %esi
-        jle     .L2
-        movl    $0, %eax
+        testl   %esi, %esi               ; Test length, which is stored in esi, and set flags based on outcome
+        jle     .L2                      ; If the value is <= 0, jump to L2
+        movl    $0, %eax                 ; Initialize i to 0
 .L3:
-        addl    $1, %eax
-        cmpl    %eax, %esi
-        jne     .L3
+        addl    $1, %eax                 ; Increment i by 1
+        cmpl    %eax, %esi               ; Compare i to the value of length
+        jne     .L3                      ; If i != length then jump to L3 (continue loop)
 .L2:
-        movl    $0, %eax
-        ret
+        movl    $0, %eax                 ; Move 0 into eax (end of loop)
+        ret                              ; Return
 
-Optimizations that are performed:
+Explain what optimizations are performed by the compiler to produce this code:
+
+Optimizations that are performed by the compiler are dead code elimination and
+constant propogation.
+Dead code elimination occurs because the code doesn't bother looking at or
+loading the elements in the array and just iterates through an empty loop.
+Constant propogation occurs because the code returns 0 anyway regardless of what
+happens in the loop.
