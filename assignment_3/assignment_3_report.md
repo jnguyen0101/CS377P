@@ -4,50 +4,48 @@
 
 ## 1. (Finite-differences, 10 points)
 
-In lecture, we considered the ode $\frac{du}{dt} = -3u(t) + 2$ with inital
-condition $u(0) - 1$. Using the forward Euler discretization scheme, we came up
-with the following recurrence equation:
+#### In lecture, we considered the ode $\frac{du}{dt} = -3u(t) + 2$ with initial condition $u(0) = 1$. Using the forward Euler discretization scheme, we came up with the following recurrence equation:
 
 $$u_f(0) = 1$$
 $$u_f(nh + h) = (1 - 3h)u_f(nh) + 2h$$
 
-where $u_f(nh)$ is the approximation for $u$ at $t - nh$. In this problem, you
-will study the behavior of the approximate solution for different values of
-$h$.
+#### where $u_f(nh)$ is the approximation for $u$ at $t = nh$. In this problem, you will study the behavior of the approximate solution for different values of $h$.
 
-**(a)** Consider the following values of $h$ : 1/6, 1/3, 1/2, 2/3, 1. On a
-single graph, plot the points for each value of $h$, using a different color for
-each $h$, in the interval $0 \leq t \leq 1$.
+#### **(a)** Consider the following values of $h$ : 1/6, 1/3, 1/2, 2/3, 1. On a single graph, plot the points for each value of $h$, using a different color for each $h$, in the interval $0 \leq t \leq 1$.
 
-**(b)** At what value of $h$ does the approximate solution start to oscillate
-instead of decreasing monotonically?
+![Question 1 Part A Graph](graphs/q1a.png)
 
-**(c)** At what value of $h$ does the approximate solution become unstable and
-blow up?
+#### **(b)** At what value of $h$ does the approximate solution start to oscillate instead of decreasing monotonically?
 
-**(d)** Explain these results analytically using the difference equation.
-Hint: look at the values of $(1 - 3h)$.
+&emsp;The approximate solution starts to oscillate instead of decreasing
+monotonically for when $h > 1/3$.
+
+#### **(c)** At what value of $h$ does the approximate solution become unstable and blow up?
+
+&emsp;The approximate solution becomes unstable and blows up when $h > 2/3$.
+
+#### **(d)** Explain these results analytically using the difference equation. Hint: look at the values of $(1 - 3h)$.
+
+&emsp;When $h = 1/6$, the value of $(1 - 3h)$ is $1/2$, which is positive and
+less than 1, so the approximate solution remains positive but decreases slowly
+towards the target. When $h = 1/3$, $(1 - 3h)$ becomes 0, so the solution sits
+and remains at the target since the equation becomes $u_f(h) = 2h$. When
+$h = 1/2$, $(1 - 3h)$ becomes negative but between -1 and 0, so it begins to
+oscillate around the target and slowly moves toward the target. When $h = 2/3$,
+$(1 - 3h)$ becomes equal to -1, so it oscillates around the target and remains
+at the same distance away from the target. Finally, when $h = 1$, $(1 - 3h)$ is
+-2, so the solution becomes unstable since at each step, the solution strays
+further and further away from the target.
 
 ## 2. (Iterative solution of linear systems, 5 points)
 
-Consider the linear system
+#### Consider the linear system $$4x + 2y = 6$$ $$x - 5y = -4$$
 
-$$4x + 2y = 6$$
-$$x - 5y = -4$$
+#### **(a)** (2 points) Write down the recurrence relation that corresponds to solving this system using the Jacobi method, starting with the initial approximation $(x_1 = 0, y_1 = 0)$. Use the first equation to refine the approximation for $x$ and the second equation to refine the approximation for $y$. Express this recurrence as a computation involving matrices and vectors.
 
-**(a)** (2 points) Write down the recurrence relation that corresponds to
-solving this system using the Jacobi method, starting with the initial
-approximation $(x_1 = 0, y_1 = 0)$. Use the first equation to refine the
-approximation for $x$ and the second equation to refine the approximation for
-$y$. Express this recurrence as a computation involving matrices and vectors.
+#### **(b)** (1 points) Compute the first 10 approximations $(x_i, y_i)$ and plot a 3D plot $(x, y, i)$ in which the z-axis is the iteration number $i$. Give an intuitive explanation of this 3D plot. You do not need to turn in any code but turn in your plot and explanation.
 
-**(b)** (1 points) Compute the first 10 approximations $(x_i, y_i)$ and plot a
-3D plot $(x, y, i)$ in which the z-axis is the iteration number $i$. Give an
-intuitive explanation of this 3D plot. You do not need to turn in any code but
-turn in your plot and explanation.
-
-**(c)** (2 points) Repeat these two parts for the Gauss-Seidel method. You can
-find a description of the Gauss-Seidel method online.
+#### **(c)** (2 points) Repeat these two parts for the Gauss-Seidel method. You can find a description of the Gauss-Seidel method online.
 
 ## 3. (ODE's, 15 points)
 
@@ -121,7 +119,7 @@ condition) and at $t = 500$. Use the second diagram to check your answer.
 
 <img src="figure_1_vibrating_membrane.png" alt="Vibrating membrane at t = 0 and
 at t = 500" id="figure-1" />
-Figure 1: Vibrating membrane at t = 0 and at t = 500 
+*Figure 1: Vibrating membrane at t = 0 and at t = 500*
 <br><br>
 
 Conceptually, you are filling in a series of arrays of size (100x100) that has

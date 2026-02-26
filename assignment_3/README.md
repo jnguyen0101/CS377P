@@ -23,10 +23,17 @@ discretization in the 2D wave equation.
 - **Iterative Solvers:** Implementation of Jacobi and Gauss-Seidel methods to
 refine approximations of linear systems.
 
+## Tools and Reference Materials
+
+- **Linear Solver:** [MATLAB](https://www.mathworks.com/products/matlab.html)
+- **Algorithmic References:** [Gauss-Seidel Method](https://mathworld.wolfram.com/Gauss-SeidelMethod.html)
+
 ## Directory Structure
 
 ```
   CS377P/assignment_3/
+  ├── graphs/                               # Plots created for questions
   ├── assignment_3.pdf                      # Assignment instructions
+  ├── figure_1_vibrating_membrane.png       # Diagram for Question 5
   └── README.md                             # Project overview and documentation
 ```
