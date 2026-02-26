@@ -28,8 +28,8 @@ monotonically for when $h > 1/3$.
 
 &emsp;When $h = 1/6$, the value of $(1 - 3h)$ is $1/2$, which is positive and
 less than 1, so the approximate solution remains positive but decreases slowly
-towards the target. When $h = 1/3$, $(1 - 3h)$ becomes 0, so the solution sits
-and remains at the target since the equation becomes $u_f(h) = 2h$. When
+towards the target (2/3). When $h = 1/3$, $(1 - 3h)$ becomes 0, so the solution
+sits and remains at the target since the equation becomes $u_f(h) = 2h$. When
 $h = 1/2$, $(1 - 3h)$ becomes negative but between -1 and 0, so it begins to
 oscillate around the target and slowly moves toward the target. When $h = 2/3$,
 $(1 - 3h)$ becomes equal to -1, so it oscillates around the target and remains
