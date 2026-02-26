@@ -41,5 +41,6 @@ locality
   CS377P/
   ├── assignment_1/          # Benchmarks six loop-order matrix multiplication variants using PAPI
   ├── assignment_2/          # Explores how compilers translate and optimize code
+  ├── assignment_3/          # Covers finite-differences, iterative solutions, and differential equations
   └── README.md              # Repository overview and documentation
 ```
