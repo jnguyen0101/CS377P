@@ -26,13 +26,14 @@ refine approximations of linear systems.
 ## Tools and Reference Materials
 
 - **Linear Solver:** [MATLAB](https://www.mathworks.com/products/matlab.html)
-- **Algorithmic References:** [Gauss-Seidel Method](https://mathworld.wolfram.com/Gauss-SeidelMethod.html)
+- **Algorithmic References:** [Gauss-Seidel Method](https://math.libretexts.org/Bookshelves/Linear_Algebra/Introduction_to_Matrix_Algebra_(Kaw)/01%3A_Chapters/1.08%3A_Gauss-Seidel_Method)
 
 ## Directory Structure
 
 ```
   CS377P/assignment_3/
   ├── graphs/                               # Plots created for questions
+  ├── assignment_3.m                        # MATLAB code for calculations and graphs
   ├── assignment_3.pdf                      # Assignment instructions
   ├── figure_1_vibrating_membrane.png       # Diagram for Question 5
   └── README.md                             # Project overview and documentation
