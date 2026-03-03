@@ -268,11 +268,13 @@ at t = 500" id="figure-1" />
 
 &emsp;$\frac{u(x,y,t+Δt)-2u(x,y,t)+u(x,y,t-Δt)}{Δt^2} = \frac{u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)}{Δx^2} + \frac{u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t)}{Δy^2}$
 
-&emsp;$u(x,y,t+Δt)-2u(x,y,t)+u(x,y,t-Δt) = \frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) + \frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))$
+&emsp;$u(x,y,t+Δt)-2u(x,y,t)+u(x,y,t-Δt) = \frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) +$<br/>
+&emsp;$\frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))$
 
 &emsp;So the difference equation is:
 
-$u(x,y,t+Δt) = 2u(x,y,t) - u(x,y,t-Δt) + \frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) + \frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))$
+&emsp;$u(x,y,t+Δt) = 2u(x,y,t) - u(x,y,t-Δt) + \frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) +$<br/>
+&emsp;$\frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))$
 
 #### **(b)** A short paragraph on how you discretized the initial conditions. Note that because you are using centered differences, you will have to compute the values of $u(x, y, −∆t)$ using the boundary condition for $u′$ just like you did in Problem 3(d) for the backward-Euler method. Here you would use the centered difference approximation to the first derivative to compute the values of $u(x, y, −∆t)$, from which you can turn the crank and compute the remaining values of $u$.
 
@@ -286,11 +288,14 @@ $u(x,y,t+Δt) = 2u(x,y,t) - u(x,y,t-Δt) + \frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x
 
 &emsp;So, by substituting this back into the difference equation at $t=0$, we can eliminate the $u(x,y,-Δt)$ term:
 
-&emsp;$u(x,y,Δt) = 2u(x,y,0) - u(x,y,Δt) + \frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) + \frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))$
+&emsp;$u(x,y,Δt) = 2u(x,y,0) - u(x,y,Δt) + \frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +$<br/>
+&emsp;$\frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))$
 
-&emsp;$2u(x,y,Δt) = 2u(x,y,0) + \frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) + \frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))$
+&emsp;$2u(x,y,Δt) = 2u(x,y,0) + \frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +$<br/>
+&emsp;$\frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))$
 
-&emsp;$u(x,y,Δt) = u(x,y,0) + \frac{Δt^2}{2Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) + \frac{Δt^2}{2Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))$
+&emsp;$u(x,y,Δt) = u(x,y,0) + \frac{Δt^2}{2Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +$<br/>
+&emsp;$\frac{Δt^2}{2Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))$
 
 &emsp;This gives us the equation for the first time step, and once this value is computed, we can use the difference equation to compute values at later times.
 

@@ -12,14 +12,15 @@
     html {
       color: #1a1a1a;
       background-color: white;
+      font-family:Georgia, serif
     }
     body {
       margin: 0 auto;
-      max-width: 50em;
+      max-width: 48em;
       padding-left: 20px;
       padding-right: 20px;
       padding-top: 20px;
-      padding-bottom: 2px;
+      padding-bottom: 20px;
       hyphens: auto;
       overflow-wrap: break-word;
       text-rendering: optimizeLegibility;
@@ -47,7 +48,7 @@
         orphans: 3;
         widows: 3;
       }
-      h2, h3, h4 {
+      h2, h3 {
         page-break-after: avoid;
       }
     }
@@ -62,7 +63,8 @@
     }
     img {
       max-width: 100%;
-      padding: 20px 0;
+      padding: 10px 0;
+      border: 1px solid black;
     }
     svg {
       height: auto;
@@ -96,7 +98,7 @@
       font-size: 85%;
       margin: 0;
       hyphens: manual;
-      background-color: #fdfdfd;
+      background-color: #F3F4F4;
     }
     pre {
       margin: 1em 0;
@@ -108,8 +110,9 @@
       overflow-wrap: normal;
     }
     .sourceCode {
-     background-color: #fdfdfd;
+     background-color: transparent;
      overflow: visible;
+     background-color: #F3F4F4;
     }
     hr {
       border: none;
@@ -124,6 +127,7 @@
       overflow-x: auto;
       display: block;
       font-variant-numeric: lining-nums tabular-nums;
+      padding: 30px 0;
     }
     table caption {
       margin-bottom: 0.75em;
@@ -270,7 +274,7 @@ value of <span class="math inline">\(h\)</span>, using a different color
 for each <span class="math inline">\(h\)</span>, in the interval <span
 class="math inline">\(0 \leq t \leq 1\)</span>.</h4>
 <figure>
-<img src="graphs/q1a.png" alt="Question 1 Part A Graph" />
+<img src="graphs/q1a.png" alt="Question 1 Part A Graph"/>
 </figure>
 <h4
 id="b-at-what-value-of-h-does-the-approximate-solution-start-to-oscillate-instead-of-decreasing-monotonically"><strong>(b)</strong>
@@ -768,12 +772,14 @@ class="math inline">\(\frac{u(x,y,t+Δt)-2u(x,y,t)+u(x,y,t-Δt)}{Δt^2} =
 \frac{u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)}{Δx^2} +
 \frac{u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t)}{Δy^2}\)</span></p>
 <p> <span class="math inline">\(u(x,y,t+Δt)-2u(x,y,t)+u(x,y,t-Δt) =
-\frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) +
-\frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))\)</span></p>
+\frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) +\)</span><br/>
+ <span
+class="math inline">\(\frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))\)</span></p>
 <p> So the difference equation is:</p>
-<p><span class="math inline">\(u(x,y,t+Δt) = 2u(x,y,t) - u(x,y,t-Δt) +
-\frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) +
-\frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))\)</span></p>
+<p> <span class="math inline">\(u(x,y,t+Δt) = 2u(x,y,t) - u(x,y,t-Δt) +
+\frac{Δt^2}{Δx^2}(u(x+Δx,y,t)-2u(x,y,t)+u(x-Δx,y,t)) +\)</span><br/>
+ <span
+class="math inline">\(\frac{Δt^2}{Δy^2}(u(x,y+Δy,t)-2u(x,y,t)+u(x,y-Δy,t))\)</span></p>
 <h4
 id="b-a-short-paragraph-on-how-you-discretized-the-initial-conditions.-note-that-because-you-are-using-centered-differences-you-will-have-to-compute-the-values-of-ux-y-t-using-the-boundary-condition-for-u-just-like-you-did-in-problem-3d-for-the-backward-euler-method.-here-you-would-use-the-centered-difference-approximation-to-the-first-derivative-to-compute-the-values-of-ux-y-t-from-which-you-can-turn-the-crank-and-compute-the-remaining-values-of-u."><strong>(b)</strong>
 A short paragraph on how you discretized the initial conditions. Note
@@ -800,14 +806,17 @@ u(x,y,Δt)-(2Δt)u&#39;(x,y,0)\)</span></p>
 class="math inline">\(t=0\)</span>, we can eliminate the <span
 class="math inline">\(u(x,y,-Δt)\)</span> term:</p>
 <p> <span class="math inline">\(u(x,y,Δt) = 2u(x,y,0) - u(x,y,Δt) +
-\frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +
-\frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))\)</span></p>
+\frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +\)</span><br/>
+ <span
+class="math inline">\(\frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))\)</span></p>
 <p> <span class="math inline">\(2u(x,y,Δt) = 2u(x,y,0) +
-\frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +
-\frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))\)</span></p>
+\frac{Δt^2}{Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +\)</span><br/>
+ <span
+class="math inline">\(\frac{Δt^2}{Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))\)</span></p>
 <p> <span class="math inline">\(u(x,y,Δt) = u(x,y,0) +
-\frac{Δt^2}{2Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +
-\frac{Δt^2}{2Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))\)</span></p>
+\frac{Δt^2}{2Δx^2}(u(x+Δx,y,0)-2u(x,y,0)+u(x-Δx,y,0)) +\)</span><br/>
+ <span
+class="math inline">\(\frac{Δt^2}{2Δy^2}(u(x,y+Δy,0)-2u(x,y,0)+u(x,y-Δy,0))\)</span></p>
 <p> This gives us the equation for the first time step, and once this
 value is computed, we can use the difference equation to compute values
 at later times.</p>
