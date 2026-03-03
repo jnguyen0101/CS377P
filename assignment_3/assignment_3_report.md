@@ -405,7 +405,7 @@ grid on;
 
 An example of a commutative function that is not associative would be $f(a,b) = \frac{a + b}{2}$ since $\frac{a + b}{2} = \frac{b + a}{2}$, but this isn't true if we have $f(f(a,b),c) = \frac{\frac{a+b}{2}+c}{2}$ and $f(a,f(b,c)) = \frac{a+\frac{b+c}{2}}{2}$
 
-An example of an associative function that is not commutative would be $f(a,b) = a - b$ since $f(f(a,b),c) = (a - b) - c$ yields the same results as $f(a,f(b,c)) = a - (b - c)$, but if we switch the order of the inputs, it becomes $a - b \neq b - a$.
+An example of an associative function that is not commutative would be matrix multiplication, like $(AB)C = A(BC)$ but $AB \neq BA$, given that $A$, $B$, and $C$ are matrices.
 
 #### **(b)** (2 points) What is the difference between a problem and an algorithm? Is SSSP a problem or algorithm? If it is a problem, name two algorithms for solving the SSSP problem and write down the asymptotic complexity of each algorithm. What algorithm would you use in a parallel implementation? For the last question, justify your answer briefly.
 
