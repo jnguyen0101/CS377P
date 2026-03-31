@@ -14,7 +14,7 @@ you are being asked to do.
 Numerical integration to compute an estimate for pi:
 
   - A sequential program for performing the numerical integration is available
-    here. It is an adaptation of the code I showed you in class.  The code
+    here. It is an adaptation of the code I showed you in class. The code
     includes some header files that you will need in the rest of the assignment.
     Read this code and run it. It prints the estimate for pi and the running
     time in nanoseconds. 
@@ -47,25 +47,25 @@ Numerical integration to compute an estimate for pi:
     to ensure that the global variable pi is updated atomically.
     What to turn in:
       - Find the running times (of only computing pi) for one, two, four and
-        eight threads and plot the running times and speedups you observe.  What
+        eight threads and plot the running times and speedups you observe. What
         value of pi is computed by your code when it is run on 8 threads?
   - You can avoid the mutex in the previous part by using atomic instructions to
     add contributions from threads to the global variable pi. C++ provides a
     rich set of atomic instructions for this purpose. Here is one way to use
-    them for your numerical integration program.  The code below creates an
+    them for your numerical integration program. The code below creates an
     object pi that contains a field of type double on which atomic operations
     can be performed. This field is initialized to 0, and its value can be read
     using method load(). The routine add_to_pi atomically adds the value passed
     to it to this field. You should read the definition of compare_exchange_weak
-    to make sure you understand how it works. The while  loop iterates until
-    this operation succeeds.  Use this approach to implement the numerical
+    to make sure you understand how it works. The while loop iterates until
+    this operation succeeds. Use this approach to implement the numerical
     integration routine in a lock-free manner.
     What to turn in:
       - As before, find the running times (of only computing pi) for one, two,
         four and eight threads and plot the running times and speedups you
         observe. Do you see any improvements in running times compared to the
         previous part in which you used mutexes? How about speedups? Explain
-        your answers briefly.  What value of pi is computed by your code when it
+        your answers briefly. What value of pi is computed by your code when it
         is run on 8 threads?
 
 --------------------------------------------------------------------------------                                                        
