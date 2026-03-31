@@ -42,5 +42,6 @@ locality
   ├── assignment_1/          # Benchmarks six loop-order matrix multiplication variants using PAPI
   ├── assignment_2/          # Explores how compilers translate and optimize code
   ├── assignment_3/          # Covers finite-differences, iterative solutions, and differential equations
+  ├── assignment_4/          # Implements parallel programs to compute an approximation to pi
   └── README.md              # Repository overview and documentation
 ```

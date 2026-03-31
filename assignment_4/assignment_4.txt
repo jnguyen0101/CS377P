@@ -1,0 +1,116 @@
+CS 377P: Programming for Performance
+Assignment 4: Shared-memory parallel programming
+Due date: April 3rd, 2026, 9:00 PM
+
+In this assignment, you will implement parallel programs to compute an
+approximation to pi using the numerical integration program discussed in class.
+You will implement several variations of this program to understand factors that
+affect performance in shared-memory programs. Read the entire assignment before
+starting work since you will be incrementally changing your code in each section
+of the assignment, and it will be useful to see the overall structure of what
+you are being asked to do.
+
+--------------------------------------------------------------------------------
+Numerical integration to compute an estimate for pi:
+
+  - A sequential program for performing the numerical integration is available
+    here. It is an adaptation of the code I showed you in class.  The code
+    includes some header files that you will need in the rest of the assignment.
+    Read this code and run it. It prints the estimate for pi and the running
+    time in nanoseconds. 
+    What to turn in:
+      - Use your knowledge of basic calculus to explain briefly why this code
+        provides an estimate for pi.
+  - In the rest of this assignment, consider the unit circle centered at the
+    origin. The top half of this circle can be written analytically as
+    y = sqrt(1-x*x) for x between -1.0 and 1.0. What is the area of this
+    semicircle?  Write a sequential program to estimate this area by performing
+    numerical integration, using an approach similar to the one in the
+    sequential program given to you. How small does the step size h have to be
+    for your answer to be within 1% of the actual value? You should estimate
+    this using experimentation.
+    What to turn in:
+      - Your sequential code and the value of h you found experimentally.
+  - Modify this sequential code as follows to compute the estimate for pi in
+    parallel using pthreads. Your code should create some number of threads and
+    divide the responsibility for performing the numerical integration between
+    these threads. You can use the round-robin assignments of points in the code
+    I showed you in class. Whenever a thread computes a value, it should add it
+    directly to the global variable pi without any synchronization.
+    What to turn in:
+      - Find the running times (of only computing pi) for one, two, four and
+        eight threads and plot the running times and speedups you observe. What
+        values are computed by your code for different numbers of threads? Why
+        would you expect that these values not to be accurate estimates of pi?
+  - In this part of the assignment, you will study the effect of true-sharing on
+    performance. Modify the code in the previous part by using a pthread mutex
+    to ensure that the global variable pi is updated atomically.
+    What to turn in:
+      - Find the running times (of only computing pi) for one, two, four and
+        eight threads and plot the running times and speedups you observe.  What
+        value of pi is computed by your code when it is run on 8 threads?
+  - You can avoid the mutex in the previous part by using atomic instructions to
+    add contributions from threads to the global variable pi. C++ provides a
+    rich set of atomic instructions for this purpose. Here is one way to use
+    them for your numerical integration program.  The code below creates an
+    object pi that contains a field of type double on which atomic operations
+    can be performed. This field is initialized to 0, and its value can be read
+    using method load(). The routine add_to_pi atomically adds the value passed
+    to it to this field. You should read the definition of compare_exchange_weak
+    to make sure you understand how it works. The while  loop iterates until
+    this operation succeeds.  Use this approach to implement the numerical
+    integration routine in a lock-free manner.
+    What to turn in:
+      - As before, find the running times (of only computing pi) for one, two,
+        four and eight threads and plot the running times and speedups you
+        observe. Do you see any improvements in running times compared to the
+        previous part in which you used mutexes? How about speedups? Explain
+        your answers briefly.  What value of pi is computed by your code when it
+        is run on 8 threads?
+
+--------------------------------------------------------------------------------                                                        
+std::atomic<double> pi{0.0};
+
+void add_to_pi(double bar) {
+  auto current = pi.load();
+  while (!pi.compare_exchange_weak(current, current + bar));
+}
+--------------------------------------------------------------------------------
+
+  - In this part of the assignment, you will study the effect of false-sharing
+    on performance. Create a global array sum and have each thread t add its
+    contribution directly into sum[t]. At the end, thread 0 can add the values
+    in this array to produce the estimate for pi.
+    What to turn in:
+      - Find the running times (of only computing pi) for one, two, four and
+        eight threads, and plot the running times and speedups you observe. What
+        value of pi computed by your code when it is run on 8 threads?
+  - In this part of the assignment, you will study the performance benefit of
+    eliminating both true-sharing and false-sharing. Run the code given in class
+    in which each thread has a local variable in which it keeps its running sum,
+    and then writes its final contribution to the sum array. At the end, thread
+    0 adds up the values in the array to produce the estimate for pi.
+    What to turn in:
+      - Find the running times (of only computing pi) for one, two, four and
+        eight threads, and plot the running times and speedups you observe. What
+        value of pi is computed by your code when it is run on 8 threads?
+  - The code used in the previous part used pthread_join. Replace this with a
+    barrier and run your code again.
+    What to turn in:
+      - Find the running times (of only computing pi) for one, two, four and
+        eight threads, and plot the running times and speedups you observe. What
+        value of pi is computed by your code when it is run on 8 threads?
+  - Write a short summary of your results in the previous parts, using phrases
+    like “atomic operations,” "true-sharing," and "false-sharing" in your
+    explanation.
+
+--------------------------------------------------------------------------------
+Notes:
+
+When you compute speedup for numerical integration, the numerator should be the
+running time of the serial code, and the denominator should be the running time
+of the parallel code on however many threads you used. The speedup will be
+different for different numbers of threads. Note that the running time of the
+serial code may be different from the running time of your parallel code running
+on one thread because of the overhead of synchronization in the parallel code
+even when it is running on one thread.
