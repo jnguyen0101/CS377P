@@ -852,11 +852,12 @@ id="write-a-short-summary-of-your-results-in-the-previous-parts-using-phrases-li
 Write a short summary of your results in the previous parts, using
 phrases like “atomic operations,” “true-sharing,” and “false-sharing” in
 your explanation.</h4>
+
 <p>Initially, a sequential program computed pi correctly but could not
 take advantage of multiple cores. Parallelizing without any
 synchronization improved the speed but produced inaccurate results due
 to race conditions on the shared variable pi. While initial attempts to
-ensure accuracy using mutexes atomic operations succeeded in calculating
+ensure accuracy using mutexes and atomic operations succeeded in calculating
 pi correctly, they suffered from severe performance degradation due to
 true-sharing, where multiple cores competed for the same memory address
 and forced constant cache synchronization. Moving to a global array
