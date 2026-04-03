@@ -33,10 +33,13 @@ argument. For example, to run the atomic version with 4 threads:
 ```
 
 To run the sequential versions:
+- `pi_seq` is run without any arguments
+- `pi_semicircle` can be run with an integer argument that denotes the number of points to be used
 
 ```bash
 ./pi_seq
 ./pi_semicircle
+./pi_semicircle 20
 ```
 
 ## Performance Measurements
@@ -57,6 +60,7 @@ includes the overhead of parallel primitives even when running on a single core.
 
 ```
   CS377P/assignment_4/
+  ├── compiled/                             # Compiled code
   ├── programs/
   │   ├── pi_seq.cpp                        # Sequential implementation of pi estimation
   │   ├── pi_semicircle.cpp                 # Sequential estimation of a semicircle area to find pi
