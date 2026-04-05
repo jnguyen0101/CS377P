@@ -61,7 +61,8 @@ includes the overhead of parallel primitives even when running on a single core.
 ```
   CS377P/assignment_4/
   ├── compiled/                             # Compiled code
-  ├── programs/
+  ├── graphs/                               # Graphs to visualize running time and speedup
+  ├── implementations/
   │   ├── pi_seq.cpp                        # Sequential implementation of pi estimation
   │   ├── pi_semicircle.cpp                 # Sequential estimation of a semicircle area to find pi
   │   ├── pi_parallel_race.cpp              # Pthread implementation with no synchronization
@@ -70,7 +71,6 @@ includes the overhead of parallel primitives even when running on a single core.
   │   ├── pi_parallel_false.cpp             # Study of false-sharing using a global array
   │   ├── pi_parallel_optimized.cpp         # Implementation using local thread variables to eliminate sharing
   │   └── pi_parallel_barrier.cpp           # Implementation using pthread_barrier_t
-  ├── Makefile                              # Script to compile all variants with -O3 and -lpthread flags
   ├── assignment_4.txt                      # Assignment instructions
   └── README.md                             # Project overview and documentation
 ```

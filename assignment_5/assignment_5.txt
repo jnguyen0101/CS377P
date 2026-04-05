@@ -1,0 +1,59 @@
+CS 377P: Programming for Performance
+Assignment 5: Shared-memory parallel programming (II)
+Due date: April 10th, 2026, 9:00 PM
+
+In this assignment, you will implement a pThreads program to perform the
+partitioning step in Quicksort in parallel. Recall that the partitioning step
+can become the bottleneck if it is done sequentially, even if the two recursive
+calls to Quicksort are executed in parallel. Parallelizing the partitioning step
+is nontrivial but as discussed in class, it can be done using the filter
+data-parallel operator, which in turn is implemented in parallel using the scan
+data-parallel operator. Read the entire assignment before starting to write your
+programs since the different parts build on each other.
+
+--------------------------------------------------------------------------------
+1) Sequential partitioning implementation:
+
+  - Write a sequential program that implements the partition function in
+    Quicksort. Use the median-of-three rule for selecting the pivot and allocate
+    a new array to store the input array values after partitioning since that is
+    what you will do in the parallel implementation.
+  - Input array:
+      - Element type: long
+      - Array sizes: 1K (1024), 10K, 100K, 1M, 10M
+      - Array element values: use this sequence [1,-2,3,-4,5,.....]
+           
+What to turn in: (i) your code, (ii) a table with execution times for different
+array sizes, and (iii) a log-log plot of execution times vs. array sizes.
+
+2) Parallel  partitioning using two filters:
+
+  - Write a pThreads program to implement the partition function in parallel. As
+    we discussed in lecture, this can be implemented using two filters, where
+    the first filter collects all the array elements less than the pivot, and
+    the second filter collects all the elements greater than the pivot, writing
+    all of them into the auxiliary array. The filter operation can in turn be
+    implemented using map and scan. You should allocate a new array to store the
+    input array values after partitioning. Run your parallel partition
+    implementation on the same arrays as above, and measure the execution time
+    for thread counts of 1,2,4,8,16,32.
+
+What to turn in: (i) a short description of your approach, (ii) your code, (iii)
+a table with the execution times for all array sizes and thread counts, and (iv)
+a single graph in which the x-axis is the thread count and the y-axis is the
+speedup, and in which there is a separate speedup curve for each array size.
+Measure speedup with respect to the execution time of your sequential
+implementation.
+
+3) Parallel partitioning using a single filter:
+
+  - As we discussed in lecture, the partition function can be implemented using
+    a single filter. Repeat part (2)  using a single filter to perform
+    partitioning.
+
+What to turn in: same as in the previous part.
+
+
+4) Report: write a short report (one page) summarizing your implementation and
+conclusions from your experiments.
+
