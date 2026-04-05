@@ -43,5 +43,6 @@ locality
   ├── assignment_2/          # Explores how compilers translate and optimize code
   ├── assignment_3/          # Covers finite-differences, iterative solutions, and differential equations
   ├── assignment_4/          # Implements parallel programs to compute an approximation to pi
+  ├── assignment_5/          # Parallelizes Quicksort partitioning using filter and scan operators
   └── README.md              # Repository overview and documentation
 ```
