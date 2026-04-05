@@ -13,35 +13,6 @@ memory location.
 variables that reside on the same cache line.
 - Synchronization Primitives: Comparing `pthread_join` with barriers.
 
-## How to Run
-
-### Compilation
-
-Use the provided Makefile to compile all versions of the program:
-
-```bash
-make
-```
-
-### Execution
-
-Each parallel program accepts the number of threads (1/2/4/8) as a command-line
-argument. For example, to run the atomic version with 4 threads:
-
-```bash
-./pi_parallel_atomic 4
-```
-
-To run the sequential versions:
-- `pi_seq` is run without any arguments
-- `pi_semicircle` can be run with an integer argument that denotes the number of points to be used
-
-```bash
-./pi_seq
-./pi_semicircle
-./pi_semicircle 20
-```
-
 ## Performance Measurements
 
 The programs measure the execution time of the computation phase (excluding
