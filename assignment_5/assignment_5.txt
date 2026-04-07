@@ -26,7 +26,7 @@ programs since the different parts build on each other.
 What to turn in: (i) your code, (ii) a table with execution times for different
 array sizes, and (iii) a log-log plot of execution times vs. array sizes.
 
-2) Parallel  partitioning using two filters:
+2) Parallel partitioning using two filters:
 
   - Write a pThreads program to implement the partition function in parallel. As
     we discussed in lecture, this can be implemented using two filters, where

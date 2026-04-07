@@ -14,7 +14,9 @@ This assignment focuses on the implementation and performance analysis of parall
 ```
   CS377P/assignment_5/
   ├── compiled/                             # Compiled code
-  ├── graphs/                               # Graphs to visualize execution times and speedup based on array sizes
+  ├── data/
+  │   ├── graphs/                           # Graphs to visualize execution times and speedup based on array sizes and thread count
+  │   └── output/                           # Raw output from code
   ├── implementations/
   │   ├── partition_seq.cpp                 # Sequential partitioning using median-of-three
   │   ├── partition_two.cpp                 # Parallel partitioning using two filter operations

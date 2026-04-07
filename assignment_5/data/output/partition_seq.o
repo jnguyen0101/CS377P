@@ -1,0 +1,5 @@
+Size: 1024, Time = 34451 ns
+Size: 10240, Time = 373910 ns
+Size: 102400, Time = 1633890 ns
+Size: 1048576, Time = 7084856 ns
+Size: 10485760, Time = 71681727 ns
