@@ -21,6 +21,6 @@ This assignment focuses on the implementation and performance analysis of parall
   │   ├── partition_seq.cpp                 # Sequential partitioning using median-of-three
   │   ├── partition_two.cpp                 # Parallel partitioning using two filter operations
   │   └── partition_single.cpp              # Optimized parallel partitioning using a single filter
-  ├── assignment_4.txt                      # Assignment instructions
+  ├── assignment_5.txt                      # Assignment instructions
   └── README.md                             # Project overview and documentation
 ```
