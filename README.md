@@ -44,5 +44,6 @@ locality
   ├── assignment_3/          # Covers finite-differences, iterative solutions, and differential equations
   ├── assignment_4/          # Implements parallel programs to compute an approximation to pi
   ├── assignment_5/          # Parallelizes Quicksort partitioning using filter and scan operators
+  ├── assignment_6/          # Explores GPU programming by implementing matrix multiplication kernels using the CUDA programming model
   └── README.md              # Repository overview and documentation
 ```
