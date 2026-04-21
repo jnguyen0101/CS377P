@@ -1,6 +1,7 @@
 CS 377P: Programming for Performance
 Assignment 6: Matrix Multiplication with CUDA
 Due date: April 27th, 2026, 9:00 PM
+
 The goal of this assignment is to implement several CUDA kernels for N X N matrix
 multiplication and use NVIDIA Nsight Compute to understand GPU performance behavior.
 You will write a different kernel for each task and compare the execution time of
@@ -42,7 +43,6 @@ of your matrix multiplication kernels. Use the following command to profile your
 This command collects a summary including compute-related and memory-related throughput
 information. Nsight Compute CLI supports profiling from the command line using sections
 such as SpeedOfLight.
-
 Report the following metrics:
 
   Memory [%]
