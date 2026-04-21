@@ -1,0 +1,58 @@
+TACC User Guideline (CS377P Spring 26 HW 6)
+
+Access the login node of Lonestar6
+
+  $ ssh username@login2.ls6.tacc.utexas.edu
+
+You need to enter your TACC password and then enter the TACC MFA token.
+
+Write & compile your CUDA program on the login node
+Start writing your code on the login node, since the wait time to be assigned
+a GPU node can be long. When you want to compile your code on the login node,
+you should first load the CUDA module using this command. Then, check nvcc,
+which is the NVIDIA compiler.
+
+  $ module load cuda // Load CUDA toolkit for compilation
+  $ nvcc --version
+
+Here is a simple CUDA hello-world example:
+
+  #include <stdio.h>
+  
+  __global__ void helloFromGPU() {
+      printf("Hello World from GPU!\n");
+  }
+  
+  int main() {
+      printf("Hello World from CPU!\n");
+  
+      helloFromGPU<<<1, 1>>>();
+  
+      cudaDeviceSynchronize();
+  
+      return 0;
+  }
+
+Compile it with:
+
+  $ nvcc -arch=sm_80 program.cu -o program
+
+You can specify the -arch option based on the GPU you want to run on. For
+example, Lonestar6 has A100 GPU nodes, so use -arch=sm_80, which corresponds
+to the Ampere architecture.
+
+Access a GPU node for running your code & debugging
+You will need to access a gpu-a100-small node for running your CUDA program
+and debugging. The following command allocates one GPU node for 30 minutes.
+
+  $ idev -p gpu-a100-small -N 1 -n 1 -t 00:30:00
+
+Please allocate nodes conservatively and log out after using them, since the
+cluster is often congested. Please monitor system status to estimate the waiting
+time for the node. https://tacc.utexas.edu/portal/system-status/lonestar6
+
+Once a GPU node is assigned, a new session will open on that node. Load the CUDA
+module, and then you can run your code. Note that you can access the files that
+you wrote from login node, since they are connected to network file system.
+
+  $ module load cuda 
