@@ -1,0 +1,64 @@
+CS 377P: Programming for Performance
+Assignment 6: Matrix Multiplication with CUDA
+Due date: April 27th, 2026, 9:00 PM
+The goal of this assignment is to implement several CUDA kernels for N X N matrix
+multiplication and use NVIDIA Nsight Compute to understand GPU performance behavior.
+You will write a different kernel for each task and compare the execution time of
+the different matrix multiplication implementations. We provide the skeleton code
+matmul_sample.cu here. You will use TACC Lonestar GPU node, and the access guideline
+is here.
+
+Use several matrix sizes for evaluation, including at least one large matrix size up
+to ​10,000 × 10,000​. You do not need to present results for every matrix size you test;
+presenting results for a few representative small sizes and one large size is sufficient.
+
+Task 1
+Start by running matrix multiplication with a ​single thread​. To run the kernel with only
+one thread, use kernel launch parameters <<<1, 1>>>. Measure the execution time of this
+single-thread kernel. The skeleton code shows how to measure execution time of CUDA
+programs.
+
+Task 2
+Write a kernel in which ​each thread computes one element of the output matrix​. We call
+this version naive matrix multiplication because it does not include any memory
+optimizations. To run the kernel, use kernel launch parameters <<<num_blocks,
+num_threads>>>. Measure the execution time of this kernel.
+
+Task 3
+Implement ​tiled matrix multiplication using shared memory​. Refer to slide 52 from the
+course slides. Run the tiled kernel with different tile sizes, such as ​8, 16​ and ​32​,
+and measure the execution time for each version separately. Draw a graph comparing the
+performance of the different tile sizes, and explain the observed behavior. Your plot
+should have a different line for each matrix size. What is the best speedup you obtain
+for the 10k x 10k matrix?
+
+Task 4
+Use the profiling tool NVIDIA Nsight Compute (NCU) to study the performance behavior
+of your matrix multiplication kernels. Use the following command to profile your program:
+
+  module load cuda
+  ncu --section SpeedOfLight ./program
+
+This command collects a summary including compute-related and memory-related throughput
+information. Nsight Compute CLI supports profiling from the command line using sections
+such as SpeedOfLight.
+
+Report the following metrics:
+
+  Memory [%]
+  Compute (SM) [%]
+
+Compare these metrics across:
+- naive matrix multiplication
+- tiled matrix multiplication with different tile sizes
+Explain why memory throughput and SM throughput change as tile size increases. Does Memory
+[%] continue to increase as tile size grows? If not, explain why.
+
+You may also consult the official Nsight Compute documentation and explore additional metrics,
+such as shared-memory behavior, L2 cache behavior, and other relevant profiling results.
+Nsight Compute’s profiling documentation includes memory workload analysis and other detailed
+sections for this purpose.
+
+Report
+Write a report (PDF) summarizing your implementation and conclusions from your experiments.
+Submit both your code and report in Canvas. Please write how many hours you spent on this assignment.
